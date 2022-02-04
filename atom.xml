@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://Laity0117.github.io</id>
+    <id>https://isLaity.github.io</id>
     <title>Laity</title>
-    <updated>2022-02-01T14:01:48.281Z</updated>
+    <updated>2022-02-04T11:43:24.078Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://Laity0117.github.io"/>
-    <link rel="self" href="https://Laity0117.github.io/atom.xml"/>
+    <link rel="alternate" href="https://isLaity.github.io"/>
+    <link rel="self" href="https://isLaity.github.io/atom.xml"/>
     <subtitle>温故而知新</subtitle>
-    <logo>https://Laity0117.github.io/images/avatar.png</logo>
-    <icon>https://Laity0117.github.io/favicon.ico</icon>
+    <logo>https://isLaity.github.io/images/avatar.png</logo>
+    <icon>https://isLaity.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, Laity</rights>
 </feed>

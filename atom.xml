@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://isLaity.github.io</id>
     <title>Laity</title>
-    <updated>2022-02-04T12:12:10.268Z</updated>
+    <updated>2022-02-04T12:31:09.699Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://isLaity.github.io"/>
     <link rel="self" href="https://isLaity.github.io/atom.xml"/>
@@ -10,6 +10,1072 @@
     <logo>https://isLaity.github.io/images/avatar.png</logo>
     <icon>https://isLaity.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, Laity</rights>
+    <entry>
+        <title type="html"><![CDATA[next主题添加Valine评论系统和文章阅读次数]]></title>
+        <id>https://isLaity.github.io/next主题添加Valine评论系统和文章阅读次数/</id>
+        <link href="https://isLaity.github.io/next主题添加Valine评论系统和文章阅读次数/">
+        </link>
+        <updated>2020-11-06T09:39:43.000Z</updated>
+        <summary type="html"><![CDATA[<h1 id="next主题添加valine评论系统和文章阅读次数">next主题添加Valine评论系统和文章阅读次数</h1>
+<h2 id="1为什么选择使用valine">1.为什么选择使用Valine</h2>
+<p>我个人感觉Valine评论系统，使用方便、开源、简洁、支持<code>Markdown</code>,而且Next主题里面已经给你整合了Valine评论系统。</p>
+<h2 id="2-valine评论系统配置和文章阅读次数统计的开启">2. Valine评论系统配置和文章阅读次数统计的开启</h2>
+<h3 id="1-注册国际版的leanclound">1. 注册国际版的LeanClound</h3>
+]]></summary>
+        <content type="html"><![CDATA[<h1 id="next主题添加valine评论系统和文章阅读次数">next主题添加Valine评论系统和文章阅读次数</h1>
+<h2 id="1为什么选择使用valine">1.为什么选择使用Valine</h2>
+<p>我个人感觉Valine评论系统，使用方便、开源、简洁、支持<code>Markdown</code>,而且Next主题里面已经给你整合了Valine评论系统。</p>
+<h2 id="2-valine评论系统配置和文章阅读次数统计的开启">2. Valine评论系统配置和文章阅读次数统计的开启</h2>
+<h3 id="1-注册国际版的leanclound">1. 注册国际版的LeanClound</h3>
+<!--more-->
+<p>进入 <a href="https://console.leancloud.app/login.html#/signin">LeanCloud注册页面</a> 进行注册，这里一定需要注意的是一定是注册国际版的LeanClound，不要问我为什么，因为我之前注册的是非国际版的LeanClound，但是却使用不了。</p>
+<figure data-type="image" tabindex="1"><img src="1.png" alt="LeanClound注册页面" loading="lazy"></figure>
+<h3 id="2-创建应用">2. 创建应用</h3>
+<p>然后创建一个新应用，应用名称可以自己根据自己的喜好自定义，然后下面下载 <strong>开发版</strong> 点击创建</p>
+<figure data-type="image" tabindex="2"><img src="2.png" alt="LeanClound创建应用" loading="lazy"></figure>
+<h3 id="3-创建class">3. 创建Class</h3>
+<p>创建完成后点击刚才创建的应用，进入。然后创建3个新<code>Class</code>,分别是<code>Comment</code> <code>Counter</code> <code>Valine</code> 。权限都要打开</p>
+<figure data-type="image" tabindex="3"><img src="3.png" alt="LeanClound新建Class" loading="lazy"></figure>
+<h3 id="4安全中心的设置">4.安全中心的设置</h3>
+<h4 id="1-关闭不需要的服务">1. 关闭不需要的服务</h4>
+<figure data-type="image" tabindex="4"><img src="4.png" alt="LeanClound关闭服务" loading="lazy"></figure>
+<h4 id="2-添加安全域名">2. 添加安全域名</h4>
+<p>在安全中心页面找到Web安全域名，在下面添加上自己的域名即可</p>
+<figure data-type="image" tabindex="5"><img src="5.png" alt="LeanClound添加域名" loading="lazy"></figure>
+<h3 id="5-复制-appid-和-appkey-并添加到next主题的配置文件里面">5. 复制 AppId 和 AppKey 并添加到next主题的配置文件里面</h3>
+<figure data-type="image" tabindex="6"><img src="6.png" alt="LeanClound的Keys" loading="lazy"></figure>
+<p>复制之后，进入站点文件夹找到配置文件并打开 <code>themes\next\_config.yml</code></p>
+<p>搜索<code>Valine</code>并找到<code>Valine</code>进行修改</p>
+<figure data-type="image" tabindex="7"><img src="8.png" alt="next主题配置" loading="lazy"></figure>
+<p>配置到这里，next主题的评论系统就配置完成了</p>
+<p>下面说一下文章阅读次数的配置</p>
+<h3 id="6文章阅读次数的开启">6.文章阅读次数的开启</h3>
+<h4 id="1-使用npm命令安装hexo-leancloud-counter-security">1. 使用npm命令安装<code>hexo-leancloud-counter-security</code></h4>
+<p>进入站点执行命令</p>
+<pre><code class="language-java">// 1. 进入站点这里输入你自己的站点目录
+cd hexo 
+// 2. 执行命令
+npm install hexo-leancloud-counter-security
+</code></pre>
+<h4 id="2-配置主题配置文件_configyml">2. 配置主题配置文件<code>_config.yml</code></h4>
+<p>进入站点文件夹找到配置文件并打开 <code>themes\next\_config.yml</code></p>
+<figure data-type="image" tabindex="8"><img src="7.png" alt="next主题配置" loading="lazy"></figure>
+<p>下面是效果图</p>
+<figure data-type="image" tabindex="9"><img src="9.png" alt="Valine评论系统效果图片" loading="lazy"></figure>
+<figure data-type="image" tabindex="10"><img src="10.png" alt="文章阅读次数效果图片" loading="lazy"></figure>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Hexo中给next主题添加live2d看板娘]]></title>
+        <id>https://isLaity.github.io/Hexo中给next主题添加live2d看板娘/</id>
+        <link href="https://isLaity.github.io/Hexo中给next主题添加live2d看板娘/">
+        </link>
+        <updated>2020-11-05T08:48:45.000Z</updated>
+        <summary type="html"><![CDATA[<h1 id="hexo中给next主题添加live2d看板娘">Hexo中给next主题添加live2d看板娘</h1>
+<h2 id="1-安装live2d模块">1. 安装live2d模块</h2>
+<pre><code class="language-java">// 1. 进入hexo站点文件夹
+cd Hexo
+//2. 使用node.js安装live2d
+npm install --save hexo-helper-live2d
+</code></pre>
+<h2 id="2-站点配置文件_configyml文件的配置">2. 站点配置文件<code>_config.yml</code>文件的配置</h2>
+]]></summary>
+        <content type="html"><![CDATA[<h1 id="hexo中给next主题添加live2d看板娘">Hexo中给next主题添加live2d看板娘</h1>
+<h2 id="1-安装live2d模块">1. 安装live2d模块</h2>
+<pre><code class="language-java">// 1. 进入hexo站点文件夹
+cd Hexo
+//2. 使用node.js安装live2d
+npm install --save hexo-helper-live2d
+</code></pre>
+<h2 id="2-站点配置文件_configyml文件的配置">2. 站点配置文件<code>_config.yml</code>文件的配置</h2>
+<!--more-->
+<pre><code class="language-java">// 在配置文件中 Extensions 位置下面添加：
+#live2d的配置
+live2d:
+  enable: true
+  scriptFrom: local
+  pluginRootPath: live2dw/
+  pluginJsPath: lib/
+  pluginModelPath: assets/
+  tagMode: false
+  debug: false
+  model:
+    use: live2d-widget-model-tororo
+  display:
+    position: right
+    width: 180
+    height: 330
+  mobile:
+    show: true
+  react:
+    opacity: 1
+</code></pre>
+<h2 id="3-hexo-三连">3. hexo 三连</h2>
+<pre><code class="language-java">// 1. 清缓存
+hexo clean
+// 2. 生成静态文件
+hexo g
+// 3. 上传服务器
+hexo d
+</code></pre>
+<h2 id="4-更换模型">4. 更换模型</h2>
+<h3 id="1-可以上-live2d模型-的网址找到自己喜欢的模型">1. 可以上 <a href="https://github.com/summerscar/live2dDemo" title="live2d模型">live2d模型</a> 的网址找到自己喜欢的模型</h3>
+<h3 id="2-使用npm-安装模型">2. 使用npm 安装模型</h3>
+<pre><code class="language-java">// packagename 更换为你喜欢的模型名
+npm install live2d-widget-model-packagename
+</code></pre>
+<h3 id="3-在站点配置文件_configyml文件中找到-model-进行修改">3. 在站点配置文件<code>_config.yml</code>文件中找到 model 进行修改</h3>
+<pre><code class="language-java">// packagename改为新安装的模块名即可
+model:
+    use: live2d-widget-model-packagename  
+</code></pre>
+<h2 id="5-解决live2d-与-不算子-不兼容的问题">5. 解决live2d 与 不算子 不兼容的问题</h2>
+<p>如果你的网址开启了不算子统计功能，有可能会和live2d 不兼容。</p>
+<p><strong>解决方案</strong></p>
+<p>进入网站站点，找到并打开 <code>\themes\next\layout\_third-party\statistics\busuanzi-counter.swig</code> 文件。</p>
+<pre><code class="language-java">// 找到这两个位置
+//1.
+&lt;span class=&quot;post-meta-item&quot; id=&quot;busuanzi_container_site_uv&quot; style=&quot;display: none;&quot;&gt;
+//2.
+&lt;span class=&quot;post-meta-item&quot; id=&quot;busuanzi_container_site_pv&quot; style=&quot;display: none;&quot;&gt;
+// 在后面添加 &lt;/span&gt; 标签，其他的位置不需要修改 
+  //1.
+&lt;span class=&quot;post-meta-item&quot; id=&quot;busuanzi_container_site_uv&quot; style=&quot;display: none;&quot;&gt;&lt;/span&gt;
+  //2.
+&lt;span class=&quot;post-meta-item&quot; id=&quot;busuanzi_container_site_pv&quot; style=&quot;display: none;&quot;&gt;&lt;/span&gt;
+</code></pre>
+<p>然后<code>hexo s</code> 查看下不算子是否显示。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Hexo博客NexT主题下添加字数统计和阅读时长]]></title>
+        <id>https://isLaity.github.io/Hexo博客NexT主题下添加字数统计和阅读时长/</id>
+        <link href="https://isLaity.github.io/Hexo博客NexT主题下添加字数统计和阅读时长/">
+        </link>
+        <updated>2020-11-03T08:47:59.000Z</updated>
+        <summary type="html"><![CDATA[<h1 id="hexo博客next主题下添加字数统计和阅读时长">Hexo博客NexT主题下添加字数统计和阅读时长</h1>
+<h2 id="1-进入站点安装hexo-symbols-count-time和eslint">1. 进入站点安装hexo-symbols-count-time和eslint</h2>
+<pre><code class="language-java">// 1. 进入站点（这里进入的是你自己站点的目录）
+cd Hexo
+// 2. 使用npm安装 hexo-symbols-count-time
+npm install hexo-symbols-count-time --save
+// 3. 使用npm 安装eslint
+npm install eslint --save
+</code></pre>
+]]></summary>
+        <content type="html"><![CDATA[<h1 id="hexo博客next主题下添加字数统计和阅读时长">Hexo博客NexT主题下添加字数统计和阅读时长</h1>
+<h2 id="1-进入站点安装hexo-symbols-count-time和eslint">1. 进入站点安装hexo-symbols-count-time和eslint</h2>
+<pre><code class="language-java">// 1. 进入站点（这里进入的是你自己站点的目录）
+cd Hexo
+// 2. 使用npm安装 hexo-symbols-count-time
+npm install hexo-symbols-count-time --save
+// 3. 使用npm 安装eslint
+npm install eslint --save
+</code></pre>
+<!--more-->
+<h2 id="2-在站点配置文件_configyml添加配置">2. 在站点配置文件<code>_config.yml</code>添加配置</h2>
+<pre><code class="language-java">// 1.找到Extensions添加配置
+#文字计数器  
+symbols_count_time:
+  symbols: true                # 文章字数统计
+  time: true                   # 文章阅读时长
+  total_symbols: true          # 站点总字数统计
+  total_time: true             # 站点总阅读时长
+  exclude_codeblock: false     # 排除代码字数统计
+</code></pre>
+<h2 id="3-在next-主题配置文件修改配置">3. 在next 主题配置文件修改配置</h2>
+<pre><code class="language-java">//1. 找到 symbols_count_time 根据自己的需要进行修改
+symbols_count_time:
+ separated_meta: true     
+ item_text_post: true     
+ item_text_total: true   
+   
+// separated_meta 是否另起一行（true的话不和发表时间等同一行）
+//item_text_post 首页文章统计数量前是否显示文字描述（本文字数、阅读时长）
+//item_text_total 页面底部统计数量前是否显示文字描述（站点总字数、站点阅读时长）
+</code></pre>
+<p>效果如下：</p>
+<figure data-type="image" tabindex="1"><img src="1.png" alt="文章统计" loading="lazy"></figure>
+<figure data-type="image" tabindex="2"><img src="2.png" alt="站点统计" loading="lazy"></figure>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[C#的基本语法]]></title>
+        <id>https://isLaity.github.io/C-的基本语法/</id>
+        <link href="https://isLaity.github.io/C-的基本语法/">
+        </link>
+        <updated>2020-10-19T15:00:59.000Z</updated>
+        <summary type="html"><![CDATA[<h3 id="1注释">1.注释</h3>
+<ol>
+<li>
+<p>注释的作用：</p>
+<ol>
+<li>注销</li>
+<li>解释</li>
+</ol>
+</li>
+<li>
+<p>3种注释方法：</p>
+<ol>
+<li>单行注释：  <code>// 注释内容</code></li>
+<li>多行注释：<code>/* 注释内容 */</code></li>
+<li>文档注释：<code>///</code>     多用来解释类或者方法</li>
+</ol>
+</li>
+</ol>
+]]></summary>
+        <content type="html"><![CDATA[<h3 id="1注释">1.注释</h3>
+<ol>
+<li>
+<p>注释的作用：</p>
+<ol>
+<li>注销</li>
+<li>解释</li>
+</ol>
+</li>
+<li>
+<p>3种注释方法：</p>
+<ol>
+<li>单行注释：  <code>// 注释内容</code></li>
+<li>多行注释：<code>/* 注释内容 */</code></li>
+<li>文档注释：<code>///</code>     多用来解释类或者方法</li>
+</ol>
+</li>
+</ol>
+<!--more-->
+<ol>
+<li>
+<p>折叠多余的代码：</p>
+<pre><code class="language-c#">#region 以下是不用多代码
+  ...
+#endregion
+ 
+
+</code></pre>
+</li>
+</ol>
+<h3 id="2-数据类型">2. 数据类型</h3>
+<p>在c#中有以下三种类型：</p>
+<ul>
+<li>值类型</li>
+<li>引用类型</li>
+<li>指针类型</li>
+</ul>
+<h4 id="1-值类型">1. 值类型</h4>
+<p>值类型分为两类：结构和枚举。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">描述</th>
+<th style="text-align:left">范围</th>
+<th style="text-align:left">默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">bool</td>
+<td style="text-align:left">布尔值</td>
+<td style="text-align:left">True 或 False</td>
+<td style="text-align:left">False</td>
+</tr>
+<tr>
+<td style="text-align:left">byte</td>
+<td style="text-align:left">8 位无符号整数</td>
+<td style="text-align:left">0 到 255</td>
+<td style="text-align:left">0</td>
+</tr>
+<tr>
+<td style="text-align:left">char</td>
+<td style="text-align:left">16 位 Unicode 字符</td>
+<td style="text-align:left">U +0000 到 U +ffff</td>
+<td style="text-align:left">'\0'</td>
+</tr>
+<tr>
+<td style="text-align:left">decimal</td>
+<td style="text-align:left">128 位精确的十进制值，28-29 有效位数</td>
+<td style="text-align:left">(-7.9 x 1028 到 7.9 x 1028) / 100 到 28</td>
+<td style="text-align:left">0.0M</td>
+</tr>
+<tr>
+<td style="text-align:left">double</td>
+<td style="text-align:left">64 位双精度浮点型</td>
+<td style="text-align:left">(+/-)5.0 x 10-324 到 (+/-)1.7 x 10308</td>
+<td style="text-align:left">0.0D</td>
+</tr>
+<tr>
+<td style="text-align:left">float</td>
+<td style="text-align:left">32 位单精度浮点型</td>
+<td style="text-align:left">-3.4 x 1038 到 + 3.4 x 1038</td>
+<td style="text-align:left">0.0F</td>
+</tr>
+<tr>
+<td style="text-align:left">int</td>
+<td style="text-align:left">32 位有符号整数类型</td>
+<td style="text-align:left">-2,147,483,648 到 2,147,483,647</td>
+<td style="text-align:left">0</td>
+</tr>
+<tr>
+<td style="text-align:left">long</td>
+<td style="text-align:left">64 位有符号整数类型</td>
+<td style="text-align:left">-9,223,372,036,854,775,808 到 9,223,372,036,854,775,807</td>
+<td style="text-align:left">0L</td>
+</tr>
+<tr>
+<td style="text-align:left">sbyte</td>
+<td style="text-align:left">8 位有符号整数类型</td>
+<td style="text-align:left">-128 到 127</td>
+<td style="text-align:left">0</td>
+</tr>
+<tr>
+<td style="text-align:left">short</td>
+<td style="text-align:left">16 位有符号整数类型</td>
+<td style="text-align:left">-32,768 到 32,767</td>
+<td style="text-align:left">0</td>
+</tr>
+<tr>
+<td style="text-align:left">uint</td>
+<td style="text-align:left">32 位无符号整数类型</td>
+<td style="text-align:left">0 到 4,294,967,295</td>
+<td style="text-align:left">0</td>
+</tr>
+<tr>
+<td style="text-align:left">ulong</td>
+<td style="text-align:left">64 位无符号整数类型</td>
+<td style="text-align:left">0 到 18,446,744,073,709,551,615</td>
+<td style="text-align:left">0</td>
+</tr>
+<tr>
+<td style="text-align:left">ushort</td>
+<td style="text-align:left">16 位无符号整数类型</td>
+<td style="text-align:left">0 到 65,535</td>
+<td style="text-align:left">0</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>整数类型：int 只能储存整数，不能储存小数。</li>
+<li>小数类型：double 既能储存小数，也可以储存整数。</li>
+<li>金钱类型：decimal(也是小数类型，但是精度不同，多用于储存货币) 用来储存金钱，值后面需要加上一个m。</li>
+<li>字符串类型：string 用来储存多个文本，也可以储存空，字符串类型的值需要被<strong>双引号</strong>引起来，这个<strong>双引号</strong>必须是英文的。</li>
+<li>字符类型：char 用来储存单个字符</li>
+<li>bool类型：描述对或错</li>
+</ol>
+<h3 id="3变量语法">3.变量语法</h3>
+<p>使用变量，首先需要声明这个变量，其次才可以给它赋值，然后才可以使用。</p>
+<p>声明变量 ：变量类型      变量名</p>
+<p>变量赋值： 变量名     =    值</p>
+<pre><code class="language-c#">int num； //声明或者定义了一个int 类型的变量（在内存中开辟了一块能够储存整数的空间）
+num = 100； // 给这个变量赋值（表示把100储存到了这块空间内）
+Console.WriteLine(num); //使用num
+</code></pre>
+<h3 id="4变量的命名">4.变量的命名</h3>
+<p>C#的命名规范：</p>
+<ol>
+<li>必须以“字母”、“_”或者“@”符号开头，不能以数字开头</li>
+<li>后面可以跟任意“字母”、“数字”、“下划线”</li>
+<li>起的变量名不能与C#系统中的关键字重复</li>
+<li>在C#中大小写敏感</li>
+<li>同一个变量名不可以重复定义（不严谨）</li>
+</ol>
+<p>给名字命名的时候需要满足两个命名规范：</p>
+<ol>
+<li>Camel ：骆驼命名法（又称驼峰式命名法），要求变量名首单词的首字母小写，之后单词的首字母要大写。多用于给变量或者字段命名。</li>
+<li>Pascal： 命名规范，要求每个单词的首字母都要大写，其余字母小写。多用于给类或者方法命名。</li>
+</ol>
+<h3 id="5赋值运算符">5.赋值运算符</h3>
+<p>= ：表示赋值的意思，表示把等号右边的值，赋值给等号左边的变量。</p>
+<p><code>int num = 10;</code></p>
+<p><strong>注意</strong>：</p>
+<ol>
+<li>每个表达式我们都可以求解除一个定值，对于赋值表达式而言，等号左边变量的值，就是整个赋值表达式的值。</li>
+<li>变量可以重复赋值，一旦给一个变量赋量一个新值，那么变量中的老值就不复存在了，取而代之的是新值。</li>
+</ol>
+<h3 id="6-号的作用">6. +号的作用</h3>
+<ol>
+<li>
+<p>链接：当+号两边有一边是字符串的时候，+号就起到连接的作用。</p>
+<pre><code class="language-c#"> int age =19;
+ string name = &quot;张三&quot;;
+ Console.WriteLine(&quot;我是&quot;+name+&quot;今年&quot;+age+&quot;岁&quot;);
+ Console.ReadKey();
+</code></pre>
+</li>
+<li>
+<p>相加：两边是数字的时候，+号就起到相加的作用。</p>
+<pre><code class="language-c#"> int a =19;
+ int b = 10;
+ Console.WriteLine(&quot;a+b=&quot;+(a+b));
+ Console.ReadKey();
+
+</code></pre>
+</li>
+</ol>
+<h3 id="7-占位符">7. 占位符</h3>
+<p>使用方法：先挖个坑，在填个坑。</p>
+<pre><code class="language-c#">int a =19;
+int b = 10;
+int c = 132;
+Console.WriteLine(&quot;第一个数字{0},第二个数字{1},第三个数字{2}&quot;, a, b, c);
+Console.WriteLine(&quot;第一个数字&quot;+a+&quot;,第二个数字&quot;+b+&quot;,第三个数字&quot;+c);
+Console.ReadKey();
+
+</code></pre>
+<figure data-type="image" tabindex="1"><img src="1.png" alt="占位符" loading="lazy"></figure>
+<p><strong>注意</strong>：</p>
+<ol>
+<li>你挖了几个坑，就要填几个坑，多填了，没效果，但是少填了，程序会抛异常。异常是指：语法上面没有任何错误，只不过在程序运行的期间，由于某些原因出现了问题，使程序不能正常的运行。</li>
+<li>输出顺序，按照挖坑的顺序输出</li>
+</ol>
+<h3 id="8consolereadline">8.Console.ReadLine()</h3>
+<p>Console.ReadLine() 用于接收用户的输入,</p>
+<p>使用方法：</p>
+<pre><code class="language-C#">//Console.WriteLine()  用于提示用户
+Console.WriteLine(&quot;请输入内容：&quot;);
+//定义变量 str 用于储存用户输入的内容， Console.ReadLine() 用于接收用户输入的内容。
+string str =  Console.ReadLine();
+//使用占位符打印出用户输入的内容。
+Console.WriteLine(&quot;你输入的内容是：{0}&quot;, str);
+Console.ReadKey();
+
+</code></pre>
+<figure data-type="image" tabindex="2"><img src="2.png" alt="Console.ReadLine()的使用" loading="lazy"></figure>
+<h3 id="9-转义符">9. 转义符</h3>
+<ul>
+<li>
+<p>转义符指的就是一个<code>\</code>+一个特殊的字符，组成了一个具有特殊意义的字符。</p>
+<ol>
+<li><code>\n</code> ：表示换行。</li>
+<li><code>\&quot;</code> ：表示一个英文的双引号。</li>
+<li><code>\t</code> ：表示一个<code>TAB</code>键的意思。</li>
+<li><code>\b</code> ：表示一个退格键，放到字符串的两端没有效果。</li>
+<li><code>\\</code> ：表示一个<code>\</code>。</li>
+</ol>
+</li>
+<li>
+<p>@符号</p>
+<ol>
+<li>取消<code>\</code> 在字符串中的转义作用，使其单纯的表示为一个<code>\</code></li>
+<li>将字符串按照原格式输出。</li>
+</ol>
+</li>
+</ul>
+<h3 id="10-运算符">10. 运算符</h3>
+<h4 id="1-算术运算符">1. 算术运算符</h4>
+<ul>
+<li>算术运算符：<code>+ - * / %</code>。
+<ul>
+<li><code>+</code> ：加</li>
+<li><code>-</code> ：减</li>
+<li><code>*</code> ：乘</li>
+<li><code>/</code> ：除</li>
+<li><code>%</code> ：取余</li>
+</ul>
+</li>
+<li>算术表达式：由算术运算符连接起来的式子。</li>
+<li>优先级：先乘除，后加减，有括号先算括号里面的，相同级别的从左到右运算。</li>
+<li>小括号可以无限套用，但是一定要成对出现。</li>
+</ul>
+<h4 id="2-关系运算符">2. 关系运算符</h4>
+<p>关系运算符用来描述两个事物之间的关系，由关系运算符连接的表达式称之为关系表达式，关系表达式的结果是是bool类型。</p>
+<ul>
+<li><code>&gt;(大于) &lt;(小于)</code></li>
+<li><code>&gt;=(大于等于，包含) &lt;=(小于等于，包含)</code></li>
+<li><code>==(等于，相等) !=(不等)</code></li>
+</ul>
+<h4 id="3-逻辑运算符">3. 逻辑运算符</h4>
+<p>逻辑运算符连接的表达式叫逻辑表达式</p>
+<ul>
+<li>&amp;&amp;  逻辑与  ：两边都成立才反回ture</li>
+<li>||   逻辑或  ：两边只要有一个成立就反回ture</li>
+<li>! 逻辑非 ：成立反回 false,不成立反回ture。</li>
+</ul>
+<p>逻辑运算符两边放的一般都是关系表达式或者bool类型的值，逻辑表达式的结果同样也是bool类型。</p>
+<ul>
+<li>
+<p>&amp;&amp;  逻辑与</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">表达式1</th>
+<th style="text-align:center">表达式2</th>
+<th style="text-align:center">表达式1 &amp;&amp; 表达式2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Ture</td>
+<td style="text-align:center">Ture</td>
+<td style="text-align:center">Ture</td>
+</tr>
+<tr>
+<td style="text-align:center">Ture</td>
+<td style="text-align:center">false</td>
+<td style="text-align:center">false</td>
+</tr>
+<tr>
+<td style="text-align:center">false</td>
+<td style="text-align:center">Ture</td>
+<td style="text-align:center">false</td>
+</tr>
+<tr>
+<td style="text-align:center">false</td>
+<td style="text-align:center">false</td>
+<td style="text-align:center">false</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>||   逻辑或</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">表达式1</th>
+<th style="text-align:center">表达式2</th>
+<th style="text-align:center">表达式1 || 表达式2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Ture</td>
+<td style="text-align:center">Ture</td>
+<td style="text-align:center">Ture</td>
+</tr>
+<tr>
+<td style="text-align:center">Ture</td>
+<td style="text-align:center">false</td>
+<td style="text-align:center">Ture</td>
+</tr>
+<tr>
+<td style="text-align:center">false</td>
+<td style="text-align:center">Ture</td>
+<td style="text-align:center">Ture</td>
+</tr>
+<tr>
+<td style="text-align:center">false</td>
+<td style="text-align:center">false</td>
+<td style="text-align:center">false</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>! 逻辑非</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">表达式1</th>
+<th style="text-align:center">!表达式2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">false</td>
+<td style="text-align:center">Ture</td>
+</tr>
+<tr>
+<td style="text-align:center">Ture</td>
+<td style="text-align:center">false</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<h4 id="4-复合赋值运算符">4. 复合赋值运算符</h4>
+<ul>
+<li>
+<p><code>+=</code> ：</p>
+<pre><code class="language-C#">int num =10;
+num += 20 ; // 就等于 num = num + 20; 
+</code></pre>
+</li>
+<li>
+<p><code>-=</code> ：</p>
+<pre><code class="language-C#">int num =10;
+num -= 20 ; // 就等于 num = num - 20; 
+</code></pre>
+</li>
+<li>
+<p><code>*=</code> ：</p>
+<pre><code class="language-C#">int num =10;
+num *= 20 ; // 就等于 num = num * 20; 
+</code></pre>
+</li>
+<li>
+<p><code>/=</code> ：</p>
+<pre><code class="language-C#">int num =10;
+num /= 20 ; // 就等于 num = num / 20; 
+</code></pre>
+</li>
+<li>
+<p><code>%=</code> ：</p>
+<pre><code class="language-C#">int num =10;
+num %= 20 ; // 就等于  num = num % 20; 
+</code></pre>
+</li>
+</ul>
+<h3 id="11-类型转换">11. 类型转换</h3>
+<h4 id="1-兼容的类型转换">1. 兼容的类型转换</h4>
+<ul>
+<li>
+<p><strong>隐式类型转换</strong> ：这些转换是 C# 默认的以安全方式进行的转换, 不会导致数据丢失。隐式类型转换要求两种类型兼容，目标类型大于源类型（小的转大的）</p>
+</li>
+<li>
+<p><strong>显式类型转换</strong> ：显式类型转换，即强制类型转换。显式转换需要强制转换运算符，而且强制转换会造成数据丢失。 显式类型转换要求两种类型兼容，源类型大于目标类型（大的转小的）。</p>
+<pre><code class="language-c#">double d = 66.6;
+int n = (int)d  //(要转换的类型)要转换的值。
+ // 运行后 n = 66
+</code></pre>
+</li>
+</ul>
+<h4 id="2-不兼容的类型转换convert">2. 不兼容的类型转换(Convert)</h4>
+<p>当两个类型的变量不兼容的时候，可以使用一个叫 Convert 的转换工厂进行转换</p>
+<figure data-type="image" tabindex="3"><img src="3.png" alt="Convert的使用" loading="lazy"></figure>
+<h2 id="2-流程控制">2. 流程控制</h2>
+<h3 id="1-if-if-else-else-if">1. if   if-else   else-if</h3>
+<ol>
+<li>
+<p>if结构</p>
+<p>基本语法：</p>
+<pre><code> if(条件){
+   语句1；
+     语句2；
+     ...
+ }
+</code></pre>
+<p>特点：先判断，在执行，有可能一行代码都不执行。</p>
+<figure data-type="image" tabindex="4"><img src="4.png" alt="if结构图" loading="lazy"></figure>
+</li>
+<li>
+<p>if-else 结构</p>
+<p>基本语法：</p>
+<pre><code class="language-c#"> if(条件){
+   语句1；
+    
+ }else{
+    语句2；
+ }
+</code></pre>
+<p>特点：先判断，在执行，最少都要执行一条代码。</p>
+</li>
+<li>
+<p>else-if 结构</p>
+<p>基本语法：</p>
+<pre><code class="language-c#"> if(条件1){
+   语句1； 
+ }else if(条件2){
+    语句2；
+ }else if(条件3){
+   语句3；
+ } else{
+   语句4；
+ }
+</code></pre>
+</li>
+</ol>
+<h3 id="2-异常捕获">2. 异常捕获</h3>
+<p>什么是异常语法上没有错误，在程序运行的过程中，由于某些原因程序出现了错误，不能在正常运行。所以为了程序可以正常的运行，在代码中会使用 try-catch来进行异常捕获，使我们的程序正常运行。</p>
+<p>语法：</p>
+<pre><code class="language-c#">try{
+  可能会出现异常的代码；
+}catch{  //try和catch之间不能有其他代码
+  出现异常后要执行的代码；
+}
+
+</code></pre>
+<p>执行过程：如果try中的代码没有出现异常，那么catch中的代码不会执行，如果try中的代码出现了异常，哪怕这行出现异常的代码后面还有100行代码，都不会执行了，而是直接跳到catch中执行代码。</p>
+<figure data-type="image" tabindex="5"><img src="5.png" alt="异常捕获效果图" loading="lazy"></figure>
+<h3 id="3-swish-case-结构">3. swish - case 结构</h3>
+<p>用来处理多条件定值的判断。</p>
+<p>语法：</p>
+<pre><code class="language-c#">switch(变量或者表达式的值)
+{
+  case 值1: 要执行的代码;break;
+  case 值2: 要执行的代码;break;
+  case 值3: 要执行的代码;break;
+  case 值4: 要执行的代码;break;
+  ......
+  default: 要执行的代码;break;
+}
+</code></pre>
+<p>执行过程：程序执行到switch处，首先将括号中的表达式或者变量的值计算出来，然后拿着这个值依次跟每个case后面的值进行匹配，一旦匹配成功，则执行这个case所带的代码，执行完成后，遇到break，跳出switch结构。如果和所有的case都不匹配，就看当前这个switch-case结构中是否存在default，如果有，则执行default中的语句，如果没有则该switch-case结构什么都不做。</p>
+<h3 id="4-循环结构">4. 循环结构</h3>
+<h4 id="1-while循环">1. while循环</h4>
+<p>语法：</p>
+<pre><code class="language-c#">while(循环条件){//如果循环条件一直满足，就一直执行下面的循环体，直到不满足循环条件，就跳出循环
+  循环体；
+}
+</code></pre>
+<h4 id="2-do-while循环">2. do - while循环</h4>
+<p>语法：</p>
+<pre><code class="language-c#">do{循环体;}   
+while(条件)；
+</code></pre>
+<p>do - while循环 和 while循环的区别：</p>
+<ol>
+<li>do - while循环：先执行循环体，在判断条件。while循环是先判断在去执行循环体。</li>
+<li>do - while循环，至少可以可以执行一次循环体，while循环，可能不执行循环体。</li>
+</ol>
+<h3 id="5-for循环">5. for循环</h3>
+<p>语法：</p>
+<pre><code class="language-c#">for(表达式1；表达式2；表达式3){
+  循环体；
+}
+//表达式1：用来定义循环变量，用来记录循环次数 （int i = 0; 表达式2 ；表达式3）
+//表达式2：用来定义循环要执行需要满足的条件（表达式1; i&lt;10 ；表达式3）
+//表达式3：可以改变循环条件的代码，使循环可以结束。（表达式1; 表达式2 ；i++）
+</code></pre>
+<p>使用for完成水仙花数：</p>
+<p>题：找出100～999间的水仙花数？（水仙花数指的是 这个百位数的 百位的立方 + 十位的立方 + 个位的立方 == 当前这个百位数）</p>
+<pre><code class="language-c#">for (int i = 100; i &lt;= 999; i++){
+  int bai = i /100;
+  int shi = i % / 100 /10;
+  int ge = i %/ 10;
+  if( bai * bai * bai + shi * shi* shi + ge * ge * ge == i ){
+    Console.WriteLine(&quot;水仙花数有{0}&quot;,i)
+  }
+}
+</code></pre>
+<h3 id="6-break-与-continue">6. break 与 continue</h3>
+<ol>
+<li>Break  用于循环中，退出当前循环，执行循环外的语句。</li>
+<li>continue  用于循环中，跳出此次循环，进入下一次循环</li>
+</ol>
+<p>。</p>
+<h3 id="7-三元表达式">7. 三元表达式</h3>
+<p>语法：表达式1?表达式2:表达式3；</p>
+<p>表达式1一般为一个关系表达式，</p>
+<p>如果表达式1的值为ture，那么表达式2的值就是整个三元表达式的值。</p>
+<p>如果表达式1的值为false，那么表达式3的值就是整个三元表达式的值。</p>
+<p>**注意 **：表达式2 的结果类型必须和表达式3的结果类型一致，并且也要和整个三元表达式的结果类型一致</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[C#是什么]]></title>
+        <id>https://isLaity.github.io/C#是什么/</id>
+        <link href="https://isLaity.github.io/C#是什么/">
+        </link>
+        <updated>2020-10-17T00:08:50.000Z</updated>
+        <summary type="html"><![CDATA[<h1 id="简介">简介</h1>
+<h2 id="什么是c">什么是C#</h2>
+<ol>
+<li>C# ( CSharp) 是微软开发的一种面向对象的编程语言，其语法与 <a href="http://c.biancheng.net/cplus/">C++</a> 类似，但在编程过程中要比 C++ 简单。</li>
+<li>C# 语言是一种安全的、稳定的、简单的、面向对象的编程语言， 它不仅去掉了 C++ 和 <a href="http://c.biancheng.net/java/">Java</a> 语言中的一些复杂特性，还提供了可视化工具，能够高效地编写程序。</li>
+</ol>
+]]></summary>
+        <content type="html"><![CDATA[<h1 id="简介">简介</h1>
+<h2 id="什么是c">什么是C#</h2>
+<ol>
+<li>C# ( CSharp) 是微软开发的一种面向对象的编程语言，其语法与 <a href="http://c.biancheng.net/cplus/">C++</a> 类似，但在编程过程中要比 C++ 简单。</li>
+<li>C# 语言是一种安全的、稳定的、简单的、面向对象的编程语言， 它不仅去掉了 C++ 和 <a href="http://c.biancheng.net/java/">Java</a> 语言中的一些复杂特性，还提供了可视化工具，能够高效地编写程序。</li>
+</ol>
+<!--more-->
+<h2 id="c的特点">C#的特点</h2>
+<ol>
+<li>简单、安全，不允许直接读取内存等不安全的操作,不再使用令人头疼的指针。</li>
+<li>面向对象：与其他面向对象语言一样，C# 语言也具有面向对象语言的基本特征，即封装、继承、 多态。</li>
+<li>支持跨平台</li>
+<li>开发多种类型的程序</li>
+</ol>
+<h2 id="net-与-c">.net 与 C#</h2>
+<ol>
+<li>.net / dotnet 一般指 .Net Framework 框架，一种平台，一种技术。 .Net Framework 框架是 .Net 平台中不可缺少的一部分，它提供了一个稳定的运行环境来保证我们基于 .Net 平台开发的各种应用能够正常运行。</li>
+<li>C#(sharp): 一种编程语言，可以开发基于 .net 平台的应用。</li>
+<li>(*) Java j即是一种平台又是一种编程语言</li>
+</ol>
+<h2 id="net-都能干什么">.Net 都能干什么</h2>
+<ol>
+<li>桌面应用程序 (.net 开发的桌面应用程序叫 Winform应用程序)</li>
+<li>Internet应用程序 (.net开发的Internet应用程序叫ASP.NET 应用程序 )</li>
+<li>手机开发 (.net 可以做手机开发，Wp8  )</li>
+<li>Unity 3D 游戏开发或者虚拟现实</li>
+</ol>
+<h2 id="net-的两种交互方式">.Net 的两种交互方式</h2>
+<ol>
+<li>C/S : 客户机(Client)/服务器模式(Server) 如: QQ。客户端需要安装专用的客户端软件，winform 应用程序。</li>
+<li>B/S : 浏览器(Browser)/服务器模式(Server)，客户机上只要安装一个浏览器，Internet 应用程序。</li>
+</ol>
+<h1 id="关于c的ide-visual-studio">关于C#的IDE (Visual Studio)</h1>
+<h2 id="安装-visual-studio">安装 Visual Studio</h2>
+<p>进入官网 https://visualstudio.microsoft.com/zh-hans/ 可下载安装包。</p>
+<h2 id="深入了解vs">深入了解VS</h2>
+<p>进入软件后，创建一个项目，进入项目文件夹可以看到里面有很多的文件。</p>
+<ol>
+<li>.SIn: 解决方案文件</li>
+<li>.csproj : 项目文件</li>
+<li>.cs : 类文件</li>
+</ol>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Markdown语法]]></title>
+        <id>https://isLaity.github.io/Markdown语法/</id>
+        <link href="https://isLaity.github.io/Markdown语法/">
+        </link>
+        <updated>2020-10-16T12:35:37.000Z</updated>
+        <summary type="html"><![CDATA[<p>由于hexo文档是基于markdown文档编写的，所以这里我就写了了一篇markdown语法的文章，用于介绍markdown文档语法。要想学习markdown，首先我们要先了解什么是markdown？markdown是用来干什么的？为什么要用markdown？</p>
+<h1 id="简介">简介</h1>
+<p>markdown 是一种纯文本格式的标记语言。通过简单的标记语法，它可以使普通文本内容具有一定的格式，使用范围很广。</p>
+<p>使用优点：</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>由于hexo文档是基于markdown文档编写的，所以这里我就写了了一篇markdown语法的文章，用于介绍markdown文档语法。要想学习markdown，首先我们要先了解什么是markdown？markdown是用来干什么的？为什么要用markdown？</p>
+<h1 id="简介">简介</h1>
+<p>markdown 是一种纯文本格式的标记语言。通过简单的标记语法，它可以使普通文本内容具有一定的格式，使用范围很广。</p>
+<p>使用优点：</p>
+<!--more-->
+<ol>
+<li>使用简单，易上手，易读。</li>
+<li>源码书写，基本纯键盘输入，效率高。</li>
+<li>纯文本编辑，轻量级。</li>
+<li>一种轻量级的标记语言。</li>
+</ol>
+<h1 id="使用方法">使用方法</h1>
+<h2 id="1-标题经常使用">1. 标题(经常使用)</h2>
+<p>书写格式：</p>
+<pre><code class="language-markdown"># 一级标题
+## 二级标题
+### 三级标题
+#### 四级标题
+##### 五级标题
+###### 六级标题
+</code></pre>
+<p><strong>注意</strong>: 的是在 <em>#</em> 与文字之间需要有一个空格</p>
+<p>效果图:</p>
+<figure data-type="image" tabindex="1"><img src="1.png" alt="标题效果图" loading="lazy"></figure>
+<h2 id="2-列表经常使用">2. 列表(经常使用)</h2>
+<p>书写格式：</p>
+<pre><code class="language-markdown">无序列表（符号-加一个空格）
+
+- 内容1
+- 内容2
+- 内容3
+ ...
+ 
+有序列表（数字加一个点）
+
+1. 内容1
+2. 内容2
+3. 内容3
+ ...
+</code></pre>
+<p><strong>注意</strong>: 的是在 <em>-</em> 与文字之间需要有一个空格 ，点是英文的点</p>
+<p>效果图:</p>
+<figure data-type="image" tabindex="2"><img src="2.png" alt="列表效果图" loading="lazy"></figure>
+<h2 id="3分割线">3.分割线</h2>
+<p>书写格式：三个或者三个以上的<code>-</code>或者<code>*</code>都可以。</p>
+<pre><code class="language-markdown">---
+***
+</code></pre>
+<p>效果图:</p>
+<figure data-type="image" tabindex="3"><img src="3.png" alt="分割线效果图" loading="lazy"></figure>
+<h2 id="4-引入图片经常使用">4. 引入图片(经常使用)</h2>
+<p>书写格式：</p>
+<pre><code class="language-markdown">![art](src “title”)
+
+alt：就是显示在图片下面的文字，相当于对图片内容的解释。
+src：就是图片的路径
+title：就是图片的标题，当鼠标移到图片上时显示的内容。title可加可不加，看需求。
+示例：
+![markdown语法](markdown语法2.png &quot;图片的引入&quot;)
+</code></pre>
+<p><strong>注意</strong>: 这里的<code>!</code>和<code>()</code> 都是英文。</p>
+<p>效果图:</p>
+<figure data-type="image" tabindex="4"><img src="4.png" alt="引入图片效果图" title="图片的引入" loading="lazy"></figure>
+<h2 id="5超链接经常使用">5.超链接(经常使用)</h2>
+<p>书写格式：</p>
+<pre><code class="language-markdown">[超链接名](src &quot;title&quot;)
+src:超链接地址
+title: 鼠标移到图片上时显示的内容。title可加可不加，看需求。
+
+示例：
+[CODE猫](https://mrsiluofu.cn/  &quot;code猫的博客&quot;)
+</code></pre>
+<p>效果：</p>
+<p><a href="https://mrsiluofu.cn/" title="code猫的博客">CODE猫</a></p>
+<h2 id="6表格">6.表格</h2>
+<p>书写格式：</p>
+<pre><code class="language-markdown">表头|表头|表头
+---|:--:|---:
+内容|内容|内容
+内容|内容|内容
+
+第二行分割表头和内容。
+- 有一个就行，为了对齐，多加了几个
+
+:符号作用是文字对齐方式
+1 文字默认居左
+2 :符号两边都有  表示文字居中
+3 :符号在右边    表示文字居右
+
+示例：
+
+姓名|专业|班级
+--|:--:|--:
+张三|java|一班
+李四|C++|二班
+王五|C语言|三班
+
+</code></pre>
+<p>效果：</p>
+<table>
+<thead>
+<tr>
+<th>姓名</th>
+<th style="text-align:center">专业</th>
+<th style="text-align:right">班级</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>张三</td>
+<td style="text-align:center">java</td>
+<td style="text-align:right">一班</td>
+</tr>
+<tr>
+<td>李四</td>
+<td style="text-align:center">C++</td>
+<td style="text-align:right">二班</td>
+</tr>
+<tr>
+<td>王五</td>
+<td style="text-align:center">C语言</td>
+<td style="text-align:right">三班</td>
+</tr>
+</tbody>
+</table>
+<h2 id="7代码经常使用">7.代码(经常使用)</h2>
+<p>书写格式：</p>
+<pre><code class="language-markdown">1. 单行代码:代码两边加一个反引号符号
+ `代码内容`
+2. 多行代码:使用3个或以上反引号符号，后面可以加上代码的格式。例如：java格式
+​```java
+
+示例：
+1. 单行代码
+`&lt;title&gt;示例&lt;/title&gt;`
+2. 多行代码
+​```html
+</code></pre>
+<p>效果：</p>
+<ol>
+<li>单行代码</li>
+</ol>
+<p><code>&lt;title&gt;示例&lt;/title&gt;</code></p>
+<ol start="2">
+<li>多行代码</li>
+</ol>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;meta charset=&quot;utf-8&quot;&gt;
+		&lt;title&gt;示例&lt;/title&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+	&lt;/body&gt;
+&lt;/html&gt;
+
+</code></pre>
+<h2 id="8-粗体和斜体">8. 粗体和斜体</h2>
+<p>书写格式：</p>
+<pre><code class="language-markdown">*斜体*  
+**粗体**
+
+用两个 * 包含一段文本就是粗体的语法，用一个 * 包含一段文本就是斜体，很简单，就不写效果了
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[如何为自己的网站添加HTTPS服务(添加SSL证书)]]></title>
+        <id>https://isLaity.github.io/如何为自己的网站添加HTTPS服务(添加SSL证书)/</id>
+        <link href="https://isLaity.github.io/如何为自己的网站添加HTTPS服务(添加SSL证书)/">
+        </link>
+        <updated>2020-10-15T02:09:05.000Z</updated>
+        <summary type="html"><![CDATA[<p>本篇文章是使用阿里云的免费证书配置的https，请确保你的网站已经备案并且可以访问http://你的域名。</p>
+<h1 id="一-为什么需要给自己的网站添加https">一. 为什么需要给自己的网站添加Https</h1>
+<ol>
+<li>
+<p>提升用户的信任度，避免用户信息泄露，对用户体验上会比较安全</p>
+</li>
+<li>
+<p>加密传输，HTTPS具有加密传输通道，有效保障隐私数据密文传输，截取也无法解密。HTTP明文传输，没有SSL加密通道，任何人都可以轻松截取或篡改机密数据。</p>
+</li>
+<li>
+<p>有利于SEO优化，搜索引擎目前会优先收录HTTPS网站。HTTPS协议分为两种，一种是建立一个信息安全通道，来保证数据传输的安全；另一种就是确认网站的真实性。</p>
+</li>
+</ol>
+]]></summary>
+        <content type="html"><![CDATA[<p>本篇文章是使用阿里云的免费证书配置的https，请确保你的网站已经备案并且可以访问http://你的域名。</p>
+<h1 id="一-为什么需要给自己的网站添加https">一. 为什么需要给自己的网站添加Https</h1>
+<ol>
+<li>
+<p>提升用户的信任度，避免用户信息泄露，对用户体验上会比较安全</p>
+</li>
+<li>
+<p>加密传输，HTTPS具有加密传输通道，有效保障隐私数据密文传输，截取也无法解密。HTTP明文传输，没有SSL加密通道，任何人都可以轻松截取或篡改机密数据。</p>
+</li>
+<li>
+<p>有利于SEO优化，搜索引擎目前会优先收录HTTPS网站。HTTPS协议分为两种，一种是建立一个信息安全通道，来保证数据传输的安全；另一种就是确认网站的真实性。</p>
+</li>
+</ol>
+<!--more-->
+<ol start="4">
+<li>
+<p>防止山寨、镜像网站，防范钓鱼电子邮件一般含有恶意链接，引诱没有用户访问克隆网站。</p>
+</li>
+<li>
+<p>有些浏览器针对普通HTTP网站会标注不安全站点，HTTPS标注安全。例如Google浏览器。</p>
+</li>
+</ol>
+<h1 id="二-如何给自己的网站添加https添加ssl证书">二. 如何给自己的网站添加Https(添加SSL证书)</h1>
+<h2 id="1进入阿里云搜索ssl证书">1.进入阿里云搜索SSL证书</h2>
+<figure data-type="image" tabindex="1"><img src="1.png" alt="搜索SSL证书" loading="lazy"></figure>
+<h2 id="2-点击购买阿里云ssl证书">2. 点击购买阿里云SSL证书</h2>
+<figure data-type="image" tabindex="2"><img src="2.png" alt="购买阿里云SSL证书" loading="lazy"></figure>
+<h2 id="3-证书申请">3. 证书申请</h2>
+<p>这里在上面购买完成后证书页面里会出现一个刚才购买完成的证书，这个证书会显示未申请，所以需要先申请下，点击证书申请：</p>
+<figure data-type="image" tabindex="3"><img src="3.png" alt="申请" loading="lazy"></figure>
+<p>按照上面的图片选择，信息写自己的就可以了，提交后大约3分钟左右，阿里云就会给你发邮箱或者给你打电话认证，一般都会发邮件认证，认证完成后，右边会出现几个新选项，点击下载证书。这里由于我服务器使用的是Nginx，所以下载的是Nginx证书。</p>
+<h2 id="4-服务器上配置https">4. 服务器上配置Https</h2>
+<p>这里我是基于我上一篇文章，如果有什么看不懂的可以先看看我上一篇文章。</p>
+<p>下面是服务器上的操作</p>
+<pre><code class="language-javascript">#进入nginx文件夹
+cd /etc/nginx
+#修改nginx.conf文件
+vim nginx.conf
+#修改内容：
+----
+if ($server_port = 80) {
+           rewrite ^(.*)$ https://$host$1 permanent;
+    }#这里是实现http强制跳转https
+ssl_certificate cert/4572903_mrsiluofu.cn.pem;  #将domain name.pem替换成您证书的文件名称。
+ssl_certificate_key cert/4572903_mrsiluofu.cn.key; #将domain name.key替换成您证书的密钥文件名称。
+ssl_session_timeout 5m;
+ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4; #使用此加密套件。
+ssl_protocols TLSv1 TLSv1.1 TLSv1.2; #使用该协议进行配置。
+ssl_prefer_server_ciphers on;
+  ----
+</code></pre>
+<p>这里要注意的是：如果你server里面有80端口也有443端口就使用我上面的(这里是基于我上一篇文章的，如果你是按照我上一篇文章的方法写的，这里就可以直接使用我上面的，不需要更改)</p>
+<pre><code class="language-javascript">if ($server_port = 80) {
+           rewrite ^(.*)$ https://$host$1 permanent;
+    }
+</code></pre>
+<p>但是如果你里面只有80端口，将</p>
+<pre><code class="language-javascript">if ($server_port = 80) {
+           rewrite ^(.*)$ https://$host$1 permanent;
+    }
+</code></pre>
+<p>更换为</p>
+<pre><code class="language-javascript">  rewrite ^(.*) https://$server_name$1 permanent;
+</code></pre>
+<h2 id="5-重启nginx">5. 重启Nginx</h2>
+<p><code>nginx -t</code> 检查nginx语法是否正确</p>
+<p><code>nginx -s reload</code> 重启Nginx</p>
+<h2 id="6-测试">6. 测试</h2>
+<p>浏览器里输入自己的网站，查看是否能访问，并且查看自己的网站能否强制跳转https。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[“使用Hexo+阿里云服务器搭建个人博客”]]></title>
         <id>https://isLaity.github.io/“使用Hexo+阿里云服务器搭建个人博客”/</id>

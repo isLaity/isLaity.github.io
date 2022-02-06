@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://isLaity.github.io</id>
     <title>Laity</title>
-    <updated>2022-02-05T14:59:33.100Z</updated>
+    <updated>2022-02-06T03:37:48.197Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://isLaity.github.io"/>
     <link rel="self" href="https://isLaity.github.io/atom.xml"/>
@@ -29,24 +29,24 @@
 <h3 id="1-注册国际版的leanclound">1. 注册国际版的LeanClound</h3>
 <!--more-->
 <p>进入 <a href="https://console.leancloud.app/login.html#/signin">LeanCloud注册页面</a> 进行注册，这里一定需要注意的是一定是注册国际版的LeanClound，不要问我为什么，因为我之前注册的是非国际版的LeanClound，但是却使用不了。</p>
-<figure data-type="image" tabindex="1"><img src="1.png" alt="LeanClound注册页面" loading="lazy"></figure>
+<figure data-type="image" tabindex="1"><img src="https://s2.loli.net/2022/02/06/YsCF6tGSMcAl7RH.png" alt="LeanClound注册页面" loading="lazy"></figure>
 <h3 id="2-创建应用">2. 创建应用</h3>
 <p>然后创建一个新应用，应用名称可以自己根据自己的喜好自定义，然后下面下载 <strong>开发版</strong> 点击创建</p>
-<figure data-type="image" tabindex="2"><img src="2.png" alt="LeanClound创建应用" loading="lazy"></figure>
+<figure data-type="image" tabindex="2"><img src="https://s2.loli.net/2022/02/06/Zw2pMY7WTKqCgJc.png" alt="LeanClound创建应用" loading="lazy"></figure>
 <h3 id="3-创建class">3. 创建Class</h3>
 <p>创建完成后点击刚才创建的应用，进入。然后创建3个新<code>Class</code>,分别是<code>Comment</code> <code>Counter</code> <code>Valine</code> 。权限都要打开</p>
-<figure data-type="image" tabindex="3"><img src="3.png" alt="LeanClound新建Class" loading="lazy"></figure>
+<figure data-type="image" tabindex="3"><img src="https://s2.loli.net/2022/02/06/GteYosD47Aawc6I.png" alt="LeanClound新建Class" loading="lazy"></figure>
 <h3 id="4安全中心的设置">4.安全中心的设置</h3>
 <h4 id="1-关闭不需要的服务">1. 关闭不需要的服务</h4>
-<figure data-type="image" tabindex="4"><img src="4.png" alt="LeanClound关闭服务" loading="lazy"></figure>
+<figure data-type="image" tabindex="4"><img src="https://s2.loli.net/2022/02/06/AqXwUKgapNfuT9z.png" alt="LeanClound关闭服务" loading="lazy"></figure>
 <h4 id="2-添加安全域名">2. 添加安全域名</h4>
 <p>在安全中心页面找到Web安全域名，在下面添加上自己的域名即可</p>
-<figure data-type="image" tabindex="5"><img src="5.png" alt="LeanClound添加域名" loading="lazy"></figure>
+<figure data-type="image" tabindex="5"><img src="https://s2.loli.net/2022/02/06/EUVOWG8zfnKXy7a.png" alt="LeanClound添加域名" loading="lazy"></figure>
 <h3 id="5-复制-appid-和-appkey-并添加到next主题的配置文件里面">5. 复制 AppId 和 AppKey 并添加到next主题的配置文件里面</h3>
-<figure data-type="image" tabindex="6"><img src="6.png" alt="LeanClound的Keys" loading="lazy"></figure>
+<figure data-type="image" tabindex="6"><img src="https://s2.loli.net/2022/02/06/1VylC3kzqxiJXgF.png" alt="LeanClound的Keys" loading="lazy"></figure>
 <p>复制之后，进入站点文件夹找到配置文件并打开 <code>themes\next\_config.yml</code></p>
 <p>搜索<code>Valine</code>并找到<code>Valine</code>进行修改</p>
-<figure data-type="image" tabindex="7"><img src="8.png" alt="next主题配置" loading="lazy"></figure>
+<figure data-type="image" tabindex="7"><img src="https://s2.loli.net/2022/02/06/wa5vLd6fRuYxJSI.png" alt="next主题配置" loading="lazy"></figure>
 <p>配置到这里，next主题的评论系统就配置完成了</p>
 <p>下面说一下文章阅读次数的配置</p>
 <h3 id="6文章阅读次数的开启">6.文章阅读次数的开启</h3>
@@ -59,10 +59,10 @@ npm install hexo-leancloud-counter-security
 </code></pre>
 <h4 id="2-配置主题配置文件_configyml">2. 配置主题配置文件<code>_config.yml</code></h4>
 <p>进入站点文件夹找到配置文件并打开 <code>themes\next\_config.yml</code></p>
-<figure data-type="image" tabindex="8"><img src="7.png" alt="next主题配置" loading="lazy"></figure>
+<figure data-type="image" tabindex="8"><img src="https://s2.loli.net/2022/02/06/sxzytDhNf8KYMEI.png" alt="next主题配置" loading="lazy"></figure>
 <p>下面是效果图</p>
-<figure data-type="image" tabindex="9"><img src="9.png" alt="Valine评论系统效果图片" loading="lazy"></figure>
-<figure data-type="image" tabindex="10"><img src="10.png" alt="文章阅读次数效果图片" loading="lazy"></figure>
+<figure data-type="image" tabindex="9"><img src="https://s2.loli.net/2022/02/06/rPpGvLud19oMsXh.png" alt="Valine评论系统效果图片" loading="lazy"></figure>
+<figure data-type="image" tabindex="10"><img src="https://s2.loli.net/2022/02/06/FCRjDTOpK2XwMxy.png" alt="文章阅读次数效果图片" loading="lazy"></figure>
 ]]></content>
     </entry>
     <entry>
@@ -195,8 +195,8 @@ symbols_count_time:
 //item_text_total 页面底部统计数量前是否显示文字描述（站点总字数、站点阅读时长）
 </code></pre>
 <p>效果如下：</p>
-<figure data-type="image" tabindex="1"><img src="1.png" alt="文章统计" loading="lazy"></figure>
-<figure data-type="image" tabindex="2"><img src="2.png" alt="站点统计" loading="lazy"></figure>
+<figure data-type="image" tabindex="1"><img src="https://s2.loli.net/2022/02/06/Gl65N2fdMHiApgS.png" alt="文章统计" loading="lazy"></figure>
+<figure data-type="image" tabindex="2"><img src="https://s2.loli.net/2022/02/06/FXmKhP8TsCJOS4I.png" alt="站点统计" loading="lazy"></figure>
 ]]></content>
     </entry>
     <entry>
@@ -421,7 +421,7 @@ Console.WriteLine(&quot;第一个数字&quot;+a+&quot;,第二个数字&quot;+b+&
 Console.ReadKey();
 
 </code></pre>
-<figure data-type="image" tabindex="1"><img src="1.png" alt="占位符" loading="lazy"></figure>
+<figure data-type="image" tabindex="1"><img src="https://s2.loli.net/2022/02/06/nKi1NXLFBTvfZAu.png" alt="占位符" loading="lazy"></figure>
 <p><strong>注意</strong>：</p>
 <ol>
 <li>你挖了几个坑，就要填几个坑，多填了，没效果，但是少填了，程序会抛异常。异常是指：语法上面没有任何错误，只不过在程序运行的期间，由于某些原因出现了问题，使程序不能正常的运行。</li>
@@ -439,7 +439,7 @@ Console.WriteLine(&quot;你输入的内容是：{0}&quot;, str);
 Console.ReadKey();
 
 </code></pre>
-<figure data-type="image" tabindex="2"><img src="2.png" alt="Console.ReadLine()的使用" loading="lazy"></figure>
+<figure data-type="image" tabindex="2"><img src="https://s2.loli.net/2022/02/06/b9ae5NT27zopmsr.png" alt="Console.ReadLine()的使用" loading="lazy"></figure>
 <h3 id="9-转义符">9. 转义符</h3>
 <ul>
 <li>
@@ -631,7 +631,7 @@ int n = (int)d  //(要转换的类型)要转换的值。
 </ul>
 <h4 id="2-不兼容的类型转换convert">2. 不兼容的类型转换(Convert)</h4>
 <p>当两个类型的变量不兼容的时候，可以使用一个叫 Convert 的转换工厂进行转换</p>
-<figure data-type="image" tabindex="3"><img src="3.png" alt="Convert的使用" loading="lazy"></figure>
+<figure data-type="image" tabindex="3"><img src="https://s2.loli.net/2022/02/06/jZx3F1rI2gLaO8w.png" alt="Convert的使用" loading="lazy"></figure>
 <h2 id="2-流程控制">2. 流程控制</h2>
 <h3 id="1-if-if-else-else-if">1. if   if-else   else-if</h3>
 <ol>
@@ -645,7 +645,7 @@ int n = (int)d  //(要转换的类型)要转换的值。
  }
 </code></pre>
 <p>特点：先判断，在执行，有可能一行代码都不执行。</p>
-<figure data-type="image" tabindex="4"><img src="4.png" alt="if结构图" loading="lazy"></figure>
+<figure data-type="image" tabindex="4"><img src="https://s2.loli.net/2022/02/06/SetQZX4RKODymLk.png" alt="if结构图" loading="lazy"></figure>
 </li>
 <li>
 <p>if-else 结构</p>
@@ -685,7 +685,7 @@ int n = (int)d  //(要转换的类型)要转换的值。
 
 </code></pre>
 <p>执行过程：如果try中的代码没有出现异常，那么catch中的代码不会执行，如果try中的代码出现了异常，哪怕这行出现异常的代码后面还有100行代码，都不会执行了，而是直接跳到catch中执行代码。</p>
-<figure data-type="image" tabindex="5"><img src="5.png" alt="异常捕获效果图" loading="lazy"></figure>
+<figure data-type="image" tabindex="5"><img src="https://s2.loli.net/2022/02/06/94h7zf8Nm2Lxpqi.png" alt="异常捕获效果图" loading="lazy"></figure>
 <h3 id="3-swish-case-结构">3. swish - case 结构</h3>
 <p>用来处理多条件定值的判断。</p>
 <p>语法：</p>
@@ -842,7 +842,7 @@ while(条件)；
 </code></pre>
 <p><strong>注意</strong>: 的是在 <em>#</em> 与文字之间需要有一个空格</p>
 <p>效果图:</p>
-<figure data-type="image" tabindex="1"><img src="1.png" alt="标题效果图" loading="lazy"></figure>
+<figure data-type="image" tabindex="1"><img src="https://s2.loli.net/2022/02/06/YHsrj82SZidvcgB.png" alt="标题效果图" loading="lazy"></figure>
 <h2 id="2-列表经常使用">2. 列表(经常使用)</h2>
 <p>书写格式：</p>
 <pre><code class="language-markdown">无序列表（符号-加一个空格）
@@ -861,14 +861,14 @@ while(条件)；
 </code></pre>
 <p><strong>注意</strong>: 的是在 <em>-</em> 与文字之间需要有一个空格 ，点是英文的点</p>
 <p>效果图:</p>
-<figure data-type="image" tabindex="2"><img src="2.png" alt="列表效果图" loading="lazy"></figure>
+<figure data-type="image" tabindex="2"><img src="https://s2.loli.net/2022/02/06/bx7rTYGI2VK9u6L.png" alt="列表效果图" loading="lazy"></figure>
 <h2 id="3分割线">3.分割线</h2>
 <p>书写格式：三个或者三个以上的<code>-</code>或者<code>*</code>都可以。</p>
 <pre><code class="language-markdown">---
 ***
 </code></pre>
 <p>效果图:</p>
-<figure data-type="image" tabindex="3"><img src="3.png" alt="分割线效果图" loading="lazy"></figure>
+<figure data-type="image" tabindex="3"><img src="https://s2.loli.net/2022/02/06/qpGANbxiPMa6sWg.png" alt="分割线效果图" loading="lazy"></figure>
 <h2 id="4-引入图片经常使用">4. 引入图片(经常使用)</h2>
 <p>书写格式：</p>
 <pre><code class="language-markdown">![art](src “title”)
@@ -881,7 +881,7 @@ title：就是图片的标题，当鼠标移到图片上时显示的内容。tit
 </code></pre>
 <p><strong>注意</strong>: 这里的<code>!</code>和<code>()</code> 都是英文。</p>
 <p>效果图:</p>
-<figure data-type="image" tabindex="4"><img src="4.png" alt="引入图片效果图" title="图片的引入" loading="lazy"></figure>
+<figure data-type="image" tabindex="4"><img src="https://s2.loli.net/2022/02/06/cIuAtBGOblRZKyv.png" alt="引入图片效果图" loading="lazy"></figure>
 <h2 id="5超链接经常使用">5.超链接(经常使用)</h2>
 <p>书写格式：</p>
 <pre><code class="language-markdown">[超链接名](src &quot;title&quot;)
@@ -889,10 +889,10 @@ src:超链接地址
 title: 鼠标移到图片上时显示的内容。title可加可不加，看需求。
 
 示例：
-[CODE猫](https://mrsiluofu.cn/  &quot;code猫的博客&quot;)
+[CODE猫](https://islaity.github.io &quot;Laity的博客&quot;)
 </code></pre>
 <p>效果：</p>
-<p><a href="https://mrsiluofu.cn/" title="code猫的博客">CODE猫</a></p>
+<p><a href="https://islaity.github.io" title="Laity的博客">CODE猫</a></p>
 <h2 id="6表格">6.表格</h2>
 <p>书写格式：</p>
 <pre><code class="language-markdown">表头|表头|表头
@@ -1029,12 +1029,12 @@ title: 鼠标移到图片上时显示的内容。title可加可不加，看需�
 </ol>
 <h1 id="二-如何给自己的网站添加https添加ssl证书">二. 如何给自己的网站添加Https(添加SSL证书)</h1>
 <h2 id="1进入阿里云搜索ssl证书">1.进入阿里云搜索SSL证书</h2>
-<figure data-type="image" tabindex="1"><img src="1.png" alt="搜索SSL证书" loading="lazy"></figure>
+<figure data-type="image" tabindex="1"><img src="https://s2.loli.net/2022/02/06/5fD3UF4ZeIqgcnr.png" alt="搜索SSL证书" loading="lazy"></figure>
 <h2 id="2-点击购买阿里云ssl证书">2. 点击购买阿里云SSL证书</h2>
-<figure data-type="image" tabindex="2"><img src="2.png" alt="购买阿里云SSL证书" loading="lazy"></figure>
+<figure data-type="image" tabindex="2"><img src="https://s2.loli.net/2022/02/06/jUd6x9Dfzn7PvkT.png" alt="购买阿里云SSL证书" loading="lazy"></figure>
 <h2 id="3-证书申请">3. 证书申请</h2>
 <p>这里在上面购买完成后证书页面里会出现一个刚才购买完成的证书，这个证书会显示未申请，所以需要先申请下，点击证书申请：</p>
-<figure data-type="image" tabindex="3"><img src="3.png" alt="申请" loading="lazy"></figure>
+<figure data-type="image" tabindex="3"><img src="https://s2.loli.net/2022/02/06/j9KD4fbZrsXCyoI.png" alt="申请" loading="lazy"></figure>
 <p>按照上面的图片选择，信息写自己的就可以了，提交后大约3分钟左右，阿里云就会给你发邮箱或者给你打电话认证，一般都会发邮件认证，认证完成后，右边会出现几个新选项，点击下载证书。这里由于我服务器使用的是Nginx，所以下载的是Nginx证书。</p>
 <h2 id="4-服务器上配置https">4. 服务器上配置Https</h2>
 <p>这里我是基于我上一篇文章，如果有什么看不懂的可以先看看我上一篇文章。</p>

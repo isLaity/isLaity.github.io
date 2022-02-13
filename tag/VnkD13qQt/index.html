@@ -8,7 +8,7 @@
 <meta name="keywords" content="Laity静态个人博客">
 <meta name="description" content="欲登高而穷目，勿筑台于浮沙">
 <meta name="theme-color" content="#000">
-<title>“使用Hexo+阿里云服务器搭建个人博客” | Laity</title>
+<title>Laity</title>
 <link rel="shortcut icon" href="/favicon.ico?v=1644731651488">
 <link rel="stylesheet" href="/media/css/gemini.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
@@ -41,8 +41,6 @@
 
 
 
-  <meta name="description" content="“使用Hexo+阿里云服务器搭建个人博客”" />
-  <meta name="keywords" content="Hexo,教程" />
 </head>
 
 <body>
@@ -175,26 +173,10 @@
   <div class="main-continer">
     
     <div
-      class="section-layout gemini ">
+      class="section-layout  gemini">
       <div class="section-layout-wrapper">
-        
-
-<div class="sidebar">
-  
-    <div class="sidebar-box box-shadow-wrapper bg-color right-motion" id="sidebar">
-      
-        <div class="post-list-sidebar">
-          <div class="sidebar-title">
-            <span id="tocSideBar" class="sidebar-title-item sidebar-title-active language" data-lan="index">文章目录</span>
-            <span id="metaSideBar" class="sidebar-title-item language" data-lan="preview">站点概览</span>
-          </div>
-        </div>
-      
-      <div class="sidebar-body gemini" id="sidebar_body">
-        
-          
-            <div class="post-side-meta" id="post_side_meta">
-              
+        <div id="sidebarMeta" class="sidebar">
+    
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="/images/avatar.png"/>
@@ -224,661 +206,102 @@
 
 
 </div>
-            </div>
-            <div class="post-toc sidebar-body-active" id="post_toc" style="opacity: 1;">
-              <div class="toc-box right-motion">
-  <div class="toc-wrapper  auto"
-    id="toc_wrapper">
-    <ul class="markdownIt-TOC">
-<li><a href="#%E6%90%AD%E5%BB%BA%E4%B8%BB%E8%A6%81%E6%AD%A5%E9%AA%A4">搭建主要步骤：</a></li>
-<li><a href="#%E6%9C%AC%E5%9C%B0%E9%85%8D%E7%BD%AEmac">本地配置(Mac)</a>
-<ul>
-<li><a href="#git-%E7%9A%84%E5%AE%89%E8%A3%85">git 的安装</a>
-<ul>
-<li><a href="#1%E8%BF%99%E9%87%8C%E6%88%91%E6%98%AF%E4%BD%BF%E7%94%A8homebrew-%E5%AE%89%E8%A3%85%E7%9A%84git">1.这里我是使用homebrew 安装的git</a></li>
-<li><a href="#2-git-%E7%9A%84%E9%85%8D%E7%BD%AE">2. git 的配置</a></li>
-</ul>
-</li>
-<li><a href="#hexo-%E7%9A%84%E5%AE%89%E8%A3%85">Hexo 的安装</a></li>
-</ul>
-</li>
-<li><a href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%8E%AF%E5%A2%83%E7%9A%84%E9%85%8D%E7%BD%AE">服务器环境的配置</a>
-<ul>
-<li><a href="#git%E5%92%8Cnginx%E7%9A%84%E5%AE%89%E8%A3%85">git和nginx的安装</a>
-<ul>
-<li><a href="#git%E7%9A%84%E5%AE%89%E8%A3%85">git的安装</a></li>
-<li><a href="#nginx-%E7%9A%84%E5%AE%89%E8%A3%85">Nginx 的安装</a></li>
-</ul>
-</li>
-<li><a href="#git%E7%9A%84%E9%85%8D%E7%BD%AE">git的配置</a>
-<ul>
-<li><a href="#1-%E5%9C%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E6%B7%BB%E5%8A%A0%E4%B8%80%E4%B8%AAgit%E7%94%A8%E6%88%B7">1. 在服务器上添加一个git用户</a></li>
-<li><a href="#2-%E7%BB%99git%E7%94%A8%E6%88%B7%E6%B7%BB%E5%8A%A0%E6%9D%83%E9%99%90">2. 给git用户添加权限</a></li>
-<li><a href="#3-%E7%BB%99git%E7%94%A8%E6%88%B7%E6%B7%BB%E5%8A%A0ssh%E5%AF%86%E9%92%A5">3. 给git用户添加ssh密钥</a></li>
-<li><a href="#4-%E5%88%9B%E5%BB%BAgit%E4%BB%93%E5%BA%93%E5%B9%B6%E4%BD%BF%E7%94%A8git-hooks-%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2">4. 创建git仓库并使用git-hooks 实现自动部署</a></li>
-</ul>
-</li>
-<li><a href="#nginx%E7%9A%84%E9%85%8D%E7%BD%AE">nginx的配置</a></li>
-<li><a href="#git%E7%94%A8%E6%88%B7%E4%BF%AE%E6%94%B9%E9%BB%98%E8%AE%A4shell%E7%8E%AF%E5%A2%83">git用户修改默认shell环境</a></li>
-</ul>
-</li>
-<li><a href="#%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E7%9A%84%E9%85%8D%E7%BD%AEmac">本地环境的配置(Mac)</a>
-<ul>
-<li><a href="#nodejs%E7%9A%84%E5%AE%89%E8%A3%85">Node.js的安装</a></li>
-<li><a href="#hexo%E7%9A%84%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE">Hexo的安装及配置</a></li>
-<li><a href="#hexo%E7%9A%84%E5%AE%89%E8%A3%85">Hexo的安装</a></li>
-<li><a href="#hexo%E7%9A%84%E9%85%8D%E7%BD%AE">Hexo的配置</a>
-<ul>
-<li><a href="#1-%E6%9C%AC%E5%9C%B0%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96">1. 本地博客的初始化</a></li>
-<li><a href="#2%E6%9C%AC%E5%9C%B0hexo%E7%9A%84%E4%BF%AE%E6%94%B9">2.本地Hexo的修改</a></li>
-<li><a href="#3-%E6%9C%AC%E5%9C%B0hexo%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8">3. 本地Hexo部署到服务器</a></li>
-<li><a href="#4%E6%B5%8B%E8%AF%95%E8%AE%BF%E9%97%AE">4.测试访问</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-  </div>
 </div>
-
 <script>
-
-  let lastTop = 0, lList = [], hList = [], postBody, lastIndex = -1;
-  let active = 'active-show', activeClass = 'active-current';
-  let tocWrapper = document.querySelector('#toc_wrapper');
-  let tocContent = tocWrapper.children[0];
-  let autoNumber = tocWrapper && tocWrapper.classList.contains('auto-number');
-
-  function addTocNumber(elem, deep) {
-    if (!elem) {
-      return;
-    }
-    let prop = elem.__proto__;
-
-    if (prop === HTMLUListElement.prototype) {
-      for (let i = 0; i < elem.children.length; i++) {
-        addTocNumber(elem.children[i], deep + (i + 1) + '.');
+  let sidebarMeta = document.querySelector('#sidebarMeta');
+  let scheme = 'gemini';
+  let sidebarWrapper = document.querySelector('.sidebar-wrapper');
+  if (sidebarMeta && (scheme === 'pisces' || scheme === 'gemini')) {
+    document.addEventListener('scroll', function(e) {
+      if (document.scrollingElement.scrollTop > parseInt(sidebarMeta.style.marginTop) + 10) {
+        sidebarWrapper.classList.add('home-sidebar-fixed')
+      } else {
+        sidebarWrapper.classList.remove('home-sidebar-fixed')
       }
-    } else if (prop === HTMLLIElement.prototype) {
-      // 保存li元素
-      if (elem.children[0] && elem.children[0].__proto__ === HTMLAnchorElement.prototype) {
-        lList.push(elem);
-      }
-      for (let i = 0; i < elem.children.length; i++) {
-        let cur = elem.children[i];
-        if (cur.__proto__ === HTMLAnchorElement.prototype) {
-          if (autoNumber) {
-            cur.text = deep + ' ' + cur.text;
-          }
-        } else if (cur.__proto__ === HTMLUListElement.prototype) {
-          addTocNumber(cur, deep);
-        }
-      }
-    }
-  }
-
-  function removeParentActiveClass() {
-    let parents = tocContent.querySelectorAll('.' + active)
-    parents.forEach(function (elem) {
-      elem.classList.remove(active);
     });
   }
-
-  function addActiveClass(index) {
-    if (index >= 0 && index < hList.length) {
-      lList[index].classList.add(activeClass);
-    }
-  }
-
-  function removeActiveClass(index) {
-    if (index >= 0 && index < hList.length) {
-      lList[index].classList.remove(activeClass);
-    }
-  }
-
-  function addActiveLiElemment(elem, parent) {
-    if (!elem || elem === parent) {
-      return;
-    } else {
-      if (elem.__proto__ === HTMLLIElement.prototype) {
-        elem.classList.add(active);
-      }
-      addActiveLiElemment(elem.parentElement, parent);
-    }
-  }
-
-  function showToc() {
-    if (tocWrapper) {
-      postBody = document.querySelector('#post_body');
-      for (let i = 0; i < postBody.children.length; i++) {
-        if (postBody.children[i].__proto__ === HTMLHeadingElement.prototype) {
-          hList.push(postBody.children[i]);
-        }
-      }
-      if (tocWrapper.classList.contains('compress')) {
-        tocContent.classList.add('closed');
-      } else if (tocWrapper.classList.contains('no_compress')) {
-        tocContent.classList.add('expanded');
-      } else {
-        if (hList.length > 10) {
-          active = 'active-hidden'
-          tocContent.classList.add('closed');
-        } else {
-          tocContent.classList.add('expanded');
-        }
-      }
-    }
-  }
-
-  (function () {
-    // 处理不是从#一级标题开始目录
-    if (tocContent.children.length === 1 && tocContent.children[0].__proto__ === HTMLLIElement.prototype) {
-      let con = tocContent.children[0].children[0];
-      tocContent.innerHTML = con.innerHTML;
-    }
-    let markdownItTOC = document.querySelector('.markdownIt-TOC');
-    let innerHeight = window.innerHeight;
-    markdownItTOC.style = `max-height: ${innerHeight - 80 > 0 ? innerHeight - 80 : innerHeight}px`
-    addTocNumber(tocContent, '');
-  })();
-
-  document.addEventListener('scroll', function (e) {
-    if (lList.length <= 0) {
-      return;
-    }
-    let scrollTop = document.scrollingElement.scrollTop + 10;
-    let dir;
-
-    if (lastTop - scrollTop > 0) {
-      dir = 'up';
-    } else {
-      dir = 'down';
-    }
-
-    lastTop = scrollTop;
-    if (scrollTop <= 0) {
-      if (lastIndex >= 0 && lastIndex < hList.length) {
-        lList[lastIndex].classList.remove(activeClass);
-      }
-      return;
-    }
-
-    let current = 0, hasFind = false;
-    for (let i = 0; i < hList.length; i++) {
-      if (hList[i].offsetTop > scrollTop) {
-        current = i;
-        hasFind = true;
-        break;
-      }
-    }
-    if (!hasFind && scrollTop > lList[lList.length - 1].offsetTop) {
-      current = hList.length - 1;
-    } else {
-      current--;
-    }
-    if (dir === 'down') {
-      if (current > lastIndex) {
-        addActiveClass(current);
-        removeActiveClass(lastIndex)
-        lastIndex = current;
-        removeParentActiveClass();
-        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
-      }
-    } else {
-      if (current < lastIndex) {
-        addActiveClass(current);
-        removeActiveClass(lastIndex);
-        lastIndex = current;
-        removeParentActiveClass();
-        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
-      }
-    }
-  });
-
-
-  window.addEventListener('load', function () {
-    showToc();
-    document.querySelector('#sidebar').style = 'display: block;';
-    tocWrapper.classList.add('toc-active');
-    setTimeout(function () {
-      if ("createEvent" in document) {
-        let evt = document.createEvent("HTMLEvents");
-        evt.initEvent("scroll", false, true);
-        document.dispatchEvent(evt);
-      }
-      else {
-        document.fireEvent("scroll");
-      }
-    }, 500)
-  })
-
-</script>
-            </div>
-          
-        
+  </script>
+        <div class="section-box tag-line box-shadow-wrapper">
+          <section class="section tags-section posts-expand bg-color">
+            <div class="padding-wrapper">
+  <div class="tag-timeline-box">
+    <div class="tag-timeline-wrapper">
+      <div class="tag-timeline-title">
+        <h2>
+          Lua
+          <small class="language" data-lan="tag">标签</small>
+        </h2>
       </div>
-    </div>
-  
-</div>
-<script>
-  const SIDEBAR_TITLE_ACTIVE = 'sidebar-title-active';
-  const SIDEBAR_BODY_ACTIVE = 'sidebar-body-active';
-  const SLIDE_UP_IN = 'slide-up-in';
-
-  let sidebar = document.querySelector('#sidebar'),
-  tocSideBar = document.querySelector('#tocSideBar'),
-  metaSideBar = document.querySelector('#metaSideBar'),
-  postToc = document.querySelector('#post_toc'),
-  postSiteMeta = document.querySelector('#post_side_meta'),
-  sidebarTitle = document.querySelector('.sidebar-title'),
-  sidebarBody = document.querySelector('#sidebar_body');
-
-  tocSideBar && tocSideBar.addEventListener('click', (e) => {
-    toggleSidebar(e);
-  });
-
-  metaSideBar && metaSideBar.addEventListener('click', (e) => {
-    toggleSidebar(e);
-  });
-
-  function toggleSidebar(e) {
-    let currentTitle = document.querySelector("."+SIDEBAR_TITLE_ACTIVE);
-    if (currentTitle == e.srcElement) {
-      return ;
-    }
-    let current, showElement, hideElement;
-    if (e.srcElement == metaSideBar) {
-      showElement = postSiteMeta;
-      hideElement = postToc;
-    } else if (e.srcElement == tocSideBar){
-      showElement = postToc;
-      hideElement = postSiteMeta;
-    }
-    currentTitle.classList.remove(SIDEBAR_TITLE_ACTIVE);
-    e.srcElement.classList.add(SIDEBAR_TITLE_ACTIVE);
-
-    jQuery.Velocity(hideElement, 'stop');
-    jQuery.Velocity(hideElement, 'transition.slideUpOut', {
-      display: 'none',
-      duration: 200,
-      complete: function () {
-        jQuery.Velocity(showElement, 'transition.slideDownIn', {
-          duration: 200
-        });
-      }
-    })
-    hideElement.classList.remove(SIDEBAR_BODY_ACTIVE);
-    showElement.classList.add(SIDEBAR_BODY_ACTIVE);
-  }
-
-  postToc && postToc.addEventListener('transitionend', function() {
-    this.classList.remove(SLIDE_UP_IN);
-  });
-
-  if (sidebarBody) {
-    if (sidebarBody.classList.contains('pisces') || sidebarBody.classList.contains('gemini')) {
-      let hasFix = false;
-      let scrollEl = document.querySelector('.main-continer');
-      let limitTop = document.querySelector('#nav_ul').children.length * 42 + 162;
-      window.addEventListener('scroll', function(e) {
-        if (document.scrollingElement.scrollTop >= limitTop) {
-          if (!hasFix) {
-            sidebar.classList.add('sidebar-fixed');
-            hasFix = true;
-          }
-        } else {
-          if (hasFix) {
-            sidebar.classList.remove('sidebar-fixed');
-            hasFix = false;
-          }
-        }
-      });
-    }
-  }
-  
-</script>
-        <div class="section-box box-shadow-wrapper">
-          <div class="section bg-color post post-page">
-            <section class="post-header">
-  <h1 class="post-title">
-    <a class="post-title-link" href="https://isLaity.github.io/“使用Hexo+阿里云服务器搭建个人博客”/"> “使用Hexo+阿里云服务器搭建个人博客” </a>
-  </h1>
-  <div class="post-meta">
-    
-    <span class="meta-item pc-show">
-      <i class="fa fa-calendar-o"></i>
-      <span class="language" data-lan="publish">发布于</span>
-      <span class="publish-time" data-t="2020-09-27 15:21:51">2020-09-27</span>
-      <span class="post-meta-divider pc-show">|</span>
-    </span>
-    
-    <span class="meta-item">
-      <i class="fa fa-folder-o"></i>
-      <span class="pc-show language" data-lan="category-in">标签:</span>
-       
-      <a href="https://isLaity.github.io/tag/4aMUR7mhm/"> <span>Hexo</span> </a>、   
-      <a href="https://isLaity.github.io/tag/ccyaBp96dy/">
-        <span>教程</span>
-      </a>
-       
-    </span>
-    <span class="post-meta-divider">|</span>
-    
-    <span class="meta-item">
-      <i class="fa fa-clock-o"></i>
-      <span
-        >6<span class="language" data-lan="minute"
-          >分钟</span
-        ></span
-      >
-    </span>
-    <span class="meta-item">
-      <span class="post-meta-divider">|</span>
-      <i class="fa fa-file-word-o"></i>
-      <span
-        >1337<span class="pc-show language" data-lan="words"
-          >字数</span
-        ></span
-      >
-    </span>
       
-    <span
-      id="/“使用Hexo+阿里云服务器搭建个人博客”/"
-      data-flag-title="“使用Hexo+阿里云服务器搭建个人博客”"
-      class="meta-item pc-show leancloud_visitors"
-    >
-      <span class="post-meta-divider">|</span>
-      <i class="fa fa-eye"></i>
-      <span
-        ><span class="language" data-lan="view">浏览量:</span>:<span
-          class="leancloud-visitors-count"
-        ></span
-      ></span>
-    </span>
-    
-  </div>
-</section>
-
-            <div class="post-body next-md-body" id="post_body">
-              <p>​		本篇文章是使用Hexo+云服务器搭建的，所以你需要拥有以下几点：</p>
-<ol>
-<li>
-<p>自己的一个服务器</p>
-</li>
-<li>
-<p>一个已经备案完成的域名</p>
-<p>​		如果你没有服务器，又不想买一个，你可以使用Hexo+GitHub来搭建自己的博客，使用GitHub搭建只需要你准备一个备案完成的域名就可以了，等以后小编有时间，在写一篇基于Hexo+GitHub搭建的教程。</p>
-</li>
-</ol>
-<!--more-->
-<h1 id="搭建主要步骤">搭建主要步骤：</h1>
-<ol>
-<li>本地配置(Mac)</li>
-<li>服务器的环境搭建</li>
-<li>本地Hexo发布到云服务器</li>
-</ol>
-<h1 id="本地配置mac">本地配置(Mac)</h1>
-<h2 id="git-的安装">git 的安装</h2>
-<h3 id="1这里我是使用homebrew-安装的git">1.这里我是使用homebrew 安装的git</h3>
-<ol>
-<li>
-<p>如果没有安装homebrew，则需要先安装homebrew</p>
-<p>终端输入：</p>
-<pre><code class="language-javascript">/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)&quot;
-</code></pre>
-<p>如果命令执行不了，可能是权限的问题，先执行下<code>sudo su</code>在使用上面的命令</p>
-</li>
-<li>
-<p>然后安装git：  <code>brew install git</code></p>
-</li>
-<li>
-<p>使用： <code>git --version</code> 查看有没有安装成功，出现git的版本号证明安装成功</p>
-</li>
-</ol>
-<h3 id="2-git-的配置">2. git 的配置</h3>
-<ol>
-<li>
-<p>设置你自己的username 和 email</p>
-<pre><code class="language-javascript">git config --global user.name&quot;username&quot; 
-git config --global user.email&quot;email&quot;
-#把这里的username和email换成你自己的
-</code></pre>
-</li>
-<li>
-<p>创建ssh key</p>
-<pre><code class="language-javascript">ssh-keygen -t rsa -C &quot;email&quot;  #这里的email换成你自己的
-</code></pre>
-<p>这里会让你选择选择 y 然后一直点击键盘的 ENTER 与就是回车键选择默认就行了</p>
-<pre><code class="language-javascript">#查看有没有创建成功，(如果进不去可能是没有创建成功，重新输入上面的命令在试一次)
-cd ~/.ssh
-#简单的看一下里面的文件
-ls 
-#查看id_rsa.pud文件，然后复制id_rsa.pud里面的内容
-cat id_rsa.pud
-
-</code></pre>
-</li>
-<li>
-<p>登陆GitHub官网，进入Setting 找到 SSH Keys 将刚才复制的内容添加进去</p>
-</li>
-</ol>
-<h2 id="hexo-的安装">Hexo 的安装</h2>
-<h1 id="服务器环境的配置">服务器环境的配置</h1>
-<h2 id="git和nginx的安装">git和nginx的安装</h2>
-<h3 id="git的安装">git的安装</h3>
-<p><code>yum install git</code></p>
-<h3 id="nginx-的安装">Nginx 的安装</h3>
-<p><code>yum install nginx</code></p>
-<h2 id="git的配置">git的配置</h2>
-<h3 id="1-在服务器上添加一个git用户">1. 在服务器上添加一个git用户</h3>
-<pre><code class="language-javascript">useradd git
-passwd git
-</code></pre>
-<h3 id="2-给git用户添加权限">2. 给git用户添加权限</h3>
-<pre><code class="language-javascript">#给git添加权限
-chmod 740 /etc/sudoers
-vim /etc/sudoers
-#在里面找到 root  ALL=(ALL)  ALL  在它的下方加一行
-git  ALL=(ALL)  ALL
-
----
-chmod 400 /etc/sudores
-</code></pre>
-<h3 id="3-给git用户添加ssh密钥">3. 给git用户添加ssh密钥</h3>
-<pre><code class="language-javascript">su - git
-mkdir -p ~/.ssh
-touch ~/.ssh/authorized_keys
-#添加权限
-chmod 600 ~/.ssh/authorized_keys
-chmod 700 ~/.ssh
-#将自己本地的ssh密钥粘贴进去
-vim ~/.ssh/authorized_keys
-</code></pre>
-<h3 id="4-创建git仓库并使用git-hooks-实现自动部署">4. 创建git仓库并使用git-hooks 实现自动部署</h3>
-<pre><code class="language-javascript"> #新建目录(目录名字可以自己设置)，这是git仓库的位置
-sudo mkdir -p /var/repo   
-sudo mkdir pp /var/www/hexo #这里用来存放本地Hexo生成的静态文件
- #进入git仓库的文件夹
-cd /var/repo 
-#创建一个名叫blog的仓库
-sudo git init --bare blog.git 
-创建post-update文件并编辑
-sudo vim /var/repo/blog.git/hooks/post-update
-
-#post-update的内容如下(---是分割线不需要写入post-update文件里面，如果你改了目录名字，这里就把目录名字换成你自己的)
- ---
-   #!/bin/bash
-git --work-tree=/var/www/hexo --git-dir=/var/repo/blog.git checkout -f
----
-
-# 给post-update添加权限
-cd /var/repo/blog.git/hooks/
-sudo chown -R git:git /var/repo/
-sudo chown -R git:git /var/www/hexo
-#赋予其可执行权限
-sudo chmod +x post-update  
-</code></pre>
-<h2 id="nginx的配置">nginx的配置</h2>
-<pre><code class="language-javascript">#进入Nginx的目录里面
-cd /etc/nginx/
-#更改nginx.conf文件
-vim nginx.conf
-
-#nginx.conf文件更改如下（---是分割线，不需要写入nginx.conf文件里面）
----
-server {
-    listen    80 default_server;
-    listen    [::]:80 default_server;
-    server_name  localhost ip www.mrsiluofu.cn;#这里ip改成你自己服务器的ip地址 ，后面的www.mrsiluofu.cn改成你自己的域名
-    root    /var/www/hexo  #这里是主要更改的位置，把目录改成你本地Hexo上传静态文件的目录
-    
-    ...
-}
-  
----
-  
-#检查nginx的文件是否有问题
-nginx -t
-#重启nginx（要想上面更改的文件生效，nginx需要重启）
-nginx -s reload
-</code></pre>
-<h2 id="git用户修改默认shell环境">git用户修改默认shell环境</h2>
-<pre><code class="language-javascript">#进入passwd修改
-vim /etc/passwd
-#找到git那一行，一般在最后一行，把目录/bin/bash 修改为 /usr/bin/git-shell，然后保存退出就行了
-</code></pre>
-<h1 id="本地环境的配置mac">本地环境的配置(Mac)</h1>
-<h2 id="nodejs的安装">Node.js的安装</h2>
-<p>这里也是使用的homebrew安装的 ：<code>brew install node</code></p>
-<p>检查是否安装完成：<code>node -v</code></p>
-<p>检查npm是否安装完成 ：<code>npm -v</code></p>
-<p>这里如果出现版本号证明安装成功</p>
-<h2 id="hexo的安装及配置">Hexo的安装及配置</h2>
-<h2 id="hexo的安装">Hexo的安装</h2>
-<p>这里使用node.js 安装Hexo：</p>
-<p><code>sudo npm install -g hexo-cli</code></p>
-<h2 id="hexo的配置">Hexo的配置</h2>
-<h3 id="1-本地博客的初始化">1. 本地博客的初始化</h3>
-<pre><code class="language-javascript">hexo init blog   #这里的blog目录可以自己更改名
-cd blog
-npm install
-</code></pre>
-<h3 id="2本地hexo的修改">2.本地Hexo的修改</h3>
-<p>这里可以直接进入blog目录下，找到_config.yml文件，直接使用文本编辑器进行修改，下面是在终端里进行的修改操作</p>
-<pre><code class="language-javascript">cd blog
-vim _config.yml
-#在_config.yml里面找到 deploy 配置部分进行修改：
-deploy:
-    type: git
-    repo: root@ip:/var/repo/blog.git #这里的ip修改为自己的服务器ip地址
-    branch: master
-
-</code></pre>
-<h3 id="3-本地hexo部署到服务器">3. 本地Hexo部署到服务器</h3>
-<p>在本地终端里</p>
-<pre><code class="language-javascript">cd blog #进入blog目录
-hexo clean #清除缓存
-hexo generate # 生成静态页面（这里可以简写成 hexo -g）
-hexo delopy  # 将本地静态页面目录部署到云服务器（这里可以简写成 hexo -d）
-</code></pre>
-<h3 id="4测试访问">4.测试访问</h3>
-<p>在浏览器里输入自己的域名查看就行了。</p>
-
-            </div>
-            
-              <div class="reward-btn">
-                <div class="reward-btn-text">赞赏</div>
-              </div>
-            
-            
-              <div class="post-footer">
-  <ul class="post-copyright">
-    <li class="post-copyright-author">
-      <strong class="language" data-lan="author">本文作者：</strong>
-      Laity
-    </li>
-    <li class="post-copyright-link">
-      <strong class="language" data-lan="link">本文链接：</strong>
-      <a href="https://isLaity.github.io/“使用Hexo+阿里云服务器搭建个人博客”/" title="“使用Hexo+阿里云服务器搭建个人博客”">https://isLaity.github.io/“使用Hexo+阿里云服务器搭建个人博客”/</a>
-    </li>
-    <li class="post-copyright-license">
-      <strong class="language" data-lan="copyright">版权声明： </strong>
-      本博客所有文章除特别声明外，均采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i> BY-NC-SA</a> 许可协议。转载请注明出处！
-    </li>
-  </ul>
-  <div class="tags">
-    
-      <a href="https://isLaity.github.io/tag/4aMUR7mhm/"># Hexo</a>
-    
-      <a href="https://isLaity.github.io/tag/ccyaBp96dy/"># 教程</a>
-    
-  </div>
-  <div class="nav">
-    <div class="nav-prev">
       
-        <i class="fa fa-chevron-left"></i>
-        <a class="nav-pc-next" title="如何为自己的网站添加HTTPS服务(添加SSL证书)" href="https://isLaity.github.io/如何为自己的网站添加HTTPS服务(添加SSL证书)/">如何为自己的网站添加HTTPS服务(添加SSL证书)</a class="nav-pc-next">
-        <a class="nav-mobile-prev" title="如何为自己的网站添加HTTPS服务(添加SSL证书)" href="https://isLaity.github.io/如何为自己的网站添加HTTPS服务(添加SSL证书)/">上一篇</a>
       
-    </div>
-    <div class="nav-next">
-      
-    </div>
-  </div>
-</div>
-            
-            
-  <script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
-<div id="vcomments" style="padding: 10px 0px 0px 0px"></div>
-
-<style>
-  .v .veditor {
-    min-height: 10rem;
-    background-image: url('');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: right;
-    background-color: rgba(255, 255, 255, 0);
-    resize: none;
-  }
-
-  .v .vwrap {
-    border: 1px solid #000 !important;
-  }
-
-  .v .vbtn {
-    padding: .4rem 1.2rem !important;
-    border-color: #fff !important;
-    background-color: #49b1f5 !important;
-    color: #fff !important;
-    font-size: .7rem !important;
-  }
-
-  .v .vcards .vcard .vh .vmeta .vat {
-    padding: 0 .8rem !important;
-    border: 1px solid #00c4b6 !important;
-    border-radius: 5px !important;
-    color: #00c4b6 !important;
-  }
-</style>
-<script>
-  new Valine({
-    el: '#vcomments',
-    appId: '0jVfEhNTW8SP7ssTcuAH0BOg-gzGzoHsz',
-    appKey: 'ns3j2Fv3UlMVtNfBhG9M00KR',
-    avatar: 'robohash',
-    placeholder: '',
-    pageSize: '',
-    lang: 'zh-cn',
-    enableQQ: 'true' === 'false',
-    visitor: 'true' === 'true',
-    highlight: 'true' === 'true',
-    avatarForce: 'true' === 'false',
-  });
-</script>
-
+      <a href="https://isLaity.github.io/关于 Lua/">
+        <div class="motion-warpper">
+          <div class="tag-post-node">
+            <h1>
+              02-10
+              <small>关于 Lua</small>
+            </h1>
           </div>
+        </div>
+      </a>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    </div>
+  </div>
+</div>
+          </section>
         </div>
       </div>
     </div>
@@ -1662,235 +1085,6 @@ hexo delopy  # 将本地静态页面目录部署到云服务器（这里可以�
     parent.insertBefore(aelem, next);
   });
 </script>
-    <div class="reward-mask" style="display: none;">
-  <div class="reward-relative">
-    <span class="close" aria-hidden="true">x</span>
-    <div class="reward-body">
-      <h2>感谢您的支持，我会继续努力的!</h2>
-      <div class="reward-img-box">
-        <div style="position: relative; width: 140px; height: 140px;">
-          
-          
-            <img id="zfb" class="reward-img" src="/media/images/custom-zfbImg.png" alt="赞赏码">
-          
-          
-            <img id="wx" class="reward-img" src="/media/images/custom-wxImg.png" alt="赞赏码">
-          
-        </div>
-      </div>
-      <p class="reward-word">扫码打赏，你说多少就多少</p>
-      <p class="reward-tip"> </p>
-    </div>
-    <div class="bottom">
-      
-      <div id="zfbBtn" class="pay-text">
-        支付宝
-      </div>
-      
-      
-      <div id="wxBtn" class="pay-text">
-        微信支付
-      </div>
-      
-    </div>
-  </div>
-</div>
-<style>
-  .reward-mask {
-    position: fixed;
-    z-index: 99999;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: #00000054;
-  }
-
-  .reward-relative {
-    position: relative;
-    width: 480px;
-    text-align: center;
-    margin: 0 auto;
-    border-radius: 5px;
-    background-color: #fff;
-    top: 50%;
-    margin-top: -205px;
-  }
-
-  .reward-relative .close {
-    position: absolute;
-    right: 10px;
-    font-weight: normal;
-    font-size: 16px;
-    color: #929292;
-  }
-
-  .reward-body {
-    padding: 40px 20px 20px;
-  }
-
-  .bottom {
-    display: flex;
-  }
-
-  .reward-btn {
-    text-align: center;
-  }
-
-  .reward-btn-text {
-    display: inline-block;
-    cursor: pointer;
-    width: 60px;
-    height: 60px;
-    line-height: 60px;
-    border-radius: 50%;
-    background-color: #ff9734;
-    color: #FFF;
-    margin-top: 20px;
-  }
-
-  .pay-text {
-    margin-top: 10px;
-    padding: 10px;
-    flex: 1;
-    transition: all .2s linear;
-  }
-
-  .pay-text:hover {
-    background-color: #a5a5a536;
-  }
-
-  .reward-body h2 {
-    padding-top: 10px;
-    text-align: center;
-    color: #a3a3a3;
-    font-size: 16px;
-    font-weight: normal;
-    margin: 0 0 20px;
-  }
-
-  .reward-body h2:after,
-  .reward-body h2:before {
-    font-family: Arial, Helvetica, sans-serif;
-    background: 0 0;
-    width: 0;
-    height: 0;
-    font-style: normal;
-    color: #eee;
-    font-size: 80px;
-    position: absolute;
-    top: 20px;
-  }
-
-  .reward-body h2:before {
-    content: '\201c';
-    left: 50px;
-  }
-
-  .reward-body h2:after {
-    content: '\201d';
-    right: 80px;
-  }
-
-  .reward-img-box {
-    display: inline-block;
-    padding: 10px;
-    border: 6px solid #ea5f00;
-    margin: 0 auto;
-    border-radius: 3px;
-    position: relative;
-  }
-
-  .reward-img {
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    width: 100%;
-    height: 100%;
-  }
-
-  @media (max-width: 767px) {
-    .reward-relative {
-      height: 100%;
-      top: 0px;
-      margin-top: 0;
-      width: auto;
-    }
-
-    .reward-relative .bottom {
-      flex-direction: column;
-    }
-
-    .reward-relative .pay-text {
-      width: 80%;
-      margin: 5px auto;
-      border: 1px solid silver;
-      padding: 6px;
-      border-radius: 4px;
-    }
-
-    .reward-body h2:after {
-      right: 40px;
-    }
-
-    .reward-body h2:after,
-    .reward-body h2:before {
-      font-size: 60px;
-    }
-
-    .reward-body h2:before {
-      left: 20px;
-    }
-  }
-</style>
-<script>
-  !function () {
-    var mask = document.querySelector('.reward-mask');
-    let close = document.querySelector('.reward-relative .close');
-    let rewardBtn = document.querySelector('.reward-btn');
-
-    let zfb = document.querySelector('#zfb'),
-      wx = document.querySelector('#wx'),
-      zfbBtn = document.querySelector('#zfbBtn'),
-      wxBtn = document.querySelector('#wxBtn');
-
-    if (zfbBtn && wxBtn) {
-      zfbBtn.addEventListener('click', () => {
-        jQuery.Velocity(zfb, 'transition.slideLeftIn', {
-          duration: 400
-        });
-        jQuery.Velocity(wx, 'transition.slideRightOut', {
-          display: 'none',
-          duration: 400
-        });
-      });
-
-      wxBtn.addEventListener('click', () => {
-        jQuery.Velocity(wx, 'transition.slideRightIn', {
-          duration: 400
-        });
-        jQuery.Velocity(zfb, 'transition.slideLeftOut', {
-          display: 'none',
-          duration: 400
-        });
-      });
-    }
-
-    rewardBtn.addEventListener('click', (e) => {
-      jQuery.Velocity(mask, 'transition.slideDownIn', {
-        duration: 400
-      })
-    });
-
-    close.addEventListener('click', (e) => {
-      e.preventDefault();
-      jQuery.Velocity(mask, 'transition.slideUpOut', {
-        duration: 400
-      })
-    })
-  }()
-</script>
-
   </div>
 </body>
 
@@ -3880,5 +3074,6 @@ hexo delopy  # 将本地静态页面目录部署到云服务器（这里可以�
 
 
   <script src="https://cdn.jsdelivr.net/gh/yremp/yremp-js@1.5/sakura.js"></script>
+
 
 </html>
